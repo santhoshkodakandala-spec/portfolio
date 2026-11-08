@@ -1,0 +1,346 @@
+# EC/10 — Epic Captures 10
+## Portfolio Project — Full Build Log & Git Push Guide
+
+---
+
+## PROJECT OVERVIEW
+
+| Item           | Detail                                      |
+|----------------|---------------------------------------------|
+| Project Name   | EC/10 – Epic Captures 10                   |
+| Type           | Personal Portfolio Website (Static HTML)    |
+| Creator        | Independent Filmmaker & Visual Creator      |
+| Tagline        | Life happens once. I frame what stays.      |
+| Instagram      | @epiccaptures10                             |
+| WhatsApp       | +91 9347419720                              |
+| Stack          | HTML5 · Tailwind CSS CDN · Vanilla JS       |
+| Location       | /Users/kodakandalasanthosh/santhu_port/     |
+
+---
+
+## FILES IN THE PROJECT
+
+```
+santhu_port/
+├── index.html          (777 lines) — Main portfolio page
+├── styles.css          (117 lines) — Custom styles, animations, components
+├── app.js              (265 lines) — Gallery, lightbox, filters, mobile nav, form
+└── .vscode/
+    └── launch.json     — VS Code Brave Browser debug config
+```
+
+---
+
+## EVERYTHING BUILT — SESSION LOG
+
+---
+
+### PHASE 1 — Project Setup & Design Direction
+
+- Discussed photography portfolio design archetypes:
+  - Dark cinematic / editorial (chosen direction)
+  - Horizontal filmstrip scroll
+  - Masonry/bento grid
+  - Fullscreen hero slider
+  - Split-screen storytelling
+- Decided on: **Warm ivory + espresso black + charcoal + muted bronze palette**
+- Tech stack: Pure HTML + Tailwind CSS CDN + Vanilla JS (no Node.js needed)
+
+---
+
+### PHASE 2 — Brand Rename (Design Brief Applied)
+
+Applied EC/10 — Epic Captures 10 official brand brief:
+- Brand identity renamed from "Santhu Visuals" → **EC/10 / Epic Captures 10**
+- Core tagline locked in: **"Life happens once. I frame what stays."**
+- Palette updated to warm editorial: `#c9a96e` gold, `#0a0906` black, `#c9a96e` accents
+- Typography: Cinzel (display) + Playfair Display (editorial serif) + Plus Jakarta Sans (body)
+
+---
+
+### PHASE 3 — Browser Launch Config Fix (Brave Browser)
+
+**Problem:**
+VS Code debug launcher was using `"type": "chrome"` with no executable path.
+Google Chrome was not installed → error: "Unable to find an installation of the browser."
+
+**Fix applied in `.vscode/launch.json`:**
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Open index.html",
+      "file": "${workspaceFolder}/index.html",
+      "url": "file://${workspaceFolder}/index.html",
+      "runtimeExecutable": "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+      "runtimeArgs": [
+        "--no-first-run",
+        "--no-default-browser-check",
+        "${workspaceFolder}/index.html"
+      ]
+    }
+  ]
+}
+```
+
+**Root cause of blank tab (second bug):**
+No `file:` target was passed — Brave opened its default new tab.
+Fixed by adding `file`, `url`, and `runtimeArgs` with the HTML path.
+
+---
+
+### PHASE 4 — WhatsApp Integration (Fully Functional)
+
+WhatsApp number: +91 9347419720
+WhatsApp URL: https://wa.me/919347419720
+
+Prefilled message (URL-encoded):
+```
+Hey! I discovered your EC/10 portfolio and really loved your work.
+I'm interested in discussing a photography/videography project.
+Let's connect!
+```
+
+Implemented in 7 places across the site:
+1. Navigation bar (desktop) — WhatsApp quick-connect button
+2. Navigation mobile drawer — WhatsApp full-width button
+3. Hero section — WhatsApp outline CTA button
+4. About section — +91 93474 19720 click-to-chat link
+5. Contact section — PRIMARY "LET'S TALK ON WHATSAPP" full-width green button
+6. Contact section — Secondary "WhatsApp Me Directly" outline button (beside form submit)
+7. Floating fixed button — bottom-right corner, pulsing green animation (always visible)
+
+Design: Official WhatsApp green (#25D366), recognizable SVG logo, pulse keyframe animation.
+
+---
+
+### PHASE 5 — Instagram Integration (Fully Functional)
+
+Instagram: @epiccaptures10
+Profile URL: https://www.instagram.com/epiccaptures10/
+
+Implemented in 6+ places:
+1. Navigation bar (desktop) — @epiccaptures10 pill with Instagram icon
+2. Navigation mobile drawer — "Follow @epiccaptures10" gradient button
+3. Hero stats strip — @epiccaptures10 click-to-open link
+4. About section — @epiccaptures10 gold link in creator details
+5. #social section — Dedicated "Visual Journey / Instagram Journal" section with:
+   - Section badge with Instagram icon
+   - "FOLLOW MY JOURNEY" prominent gradient CTA button (orange→red→purple)
+   - 4-card visual grid: each card links to Instagram profile
+6. Contact section — Instagram contact row with gradient icon ring
+7. Footer — @epiccaptures10 icon + handle link
+
+---
+
+### PHASE 6 — Full HTML Structural Repair
+
+**What went wrong:**
+During multiple edit sessions, two versions of the HTML were accidentally merged/overlaid
+into a single 1,174-line corrupted file with:
+- `<header>` nested inside `<header>` (invalid HTML)
+- `<nav>` nested inside `<nav>` (layout collapse)
+- Duplicate sections, overlays, title tags, scripts
+- JS event listeners attached to elements inside broken parent trees
+- Result: Page appeared static — no scrolling, no button interactions, broken alignment
+
+**Fix: Full clean rewrite of all 3 files**
+
+HTML validation result after rewrite:
+```
+Unclosed tags : None
+Tag mismatches: None
+Total lines   : 777 (down from 1,174 broken lines)
+```
+
+All 13 structural checks passed:
+- Single <html>, <body>, <head>, <header>
+- All sections present: #home, #portfolio, #stories, #about, #gear, #social, #contact
+- 7+ WhatsApp links, 6+ Instagram links
+- Floating WA button, app.js, styles.css all correctly linked
+
+---
+
+### PHASE 7 — Final Working Feature List
+
+#### Navigation
+- Fixed sticky header with backdrop blur
+- Desktop nav: anchor links to all 7 sections
+- Instagram pill badge in desktop nav
+- WhatsApp button in desktop nav
+- Mobile hamburger — opens/closes drawer, icon swaps (menu ↔ X)
+- Mobile drawer: all nav links + WhatsApp + Instagram full-width buttons
+
+#### Hero Section (#home)
+- Full-height layout with top meta strip, stats strip
+- Cinematic headline with italic serif accent
+- Tagline: "Life happens once. I frame what stays."
+- Two CTA buttons: Explore Projects + WhatsApp Chat
+- Featured image card with hover zoom + gold decorative border offset
+
+#### Portfolio Gallery (#portfolio)
+- 12 real photos from Unsplash with EXIF metadata
+- Masonry auto-rows grid (1 col mobile, 2 col tablet, 3 col desktop)
+- Cards use `row-span-2` for tall hero photos, `row-span-1` for standard
+- Hover: overlay reveals title, location, category, fullscreen icon
+- 6 filter pills: All / Portraits / Street / Landscape / Architecture / Monochrome
+- Clicking any card opens fullscreen lightbox
+
+#### Lightbox
+- Fullscreen overlay with backdrop blur
+- Loads high-res version with spinner
+- Previous/Next buttons + keyboard Arrow keys support
+- Escape key closes
+- EXIF toggle: Camera / Lens / Settings / ISO
+- Counter: 01 / 12 format
+- Clicking outside image closes lightbox
+
+#### Stories / Essays (#stories)
+- 3 editorial documentary cards
+- Hover zoom images with gold border accent
+- Each card: category tag, title, excerpt, date, "Read Essay" CTA
+
+#### Creator / About (#about)
+- Split 5/7 grid layout
+- Grayscale photo → hover to colour transition
+- Corner gold accent brackets decoration
+- Philosophy quote + 2 bio paragraphs
+- 3 info cols: Specializations, Instagram link, WhatsApp link
+
+#### Arsenal / Gear (#gear)
+- 4 gear cards: Sony FX3/A7R V, Leica Q3/M-System, Prime glass, DJI/Ronin
+- Icon + label + heading + description per card
+- Hover: gold border accent
+
+#### Instagram Journal (#social)
+- Dedicated full section for Instagram identity
+- Section badge + heading + description
+- Prominent "FOLLOW MY JOURNEY" Instagram gradient button
+- 4-card visual showcase grid (all link to @epiccaptures10)
+- Each card: image, category tag, title, platform icon, hover animation
+
+#### Contact (#contact)
+- 5-col / 7-col grid layout inside a card container
+- Primary: "LET'S TALK ON WHATSAPP" full-width green button
+- 3 contact rows: WhatsApp number, Instagram handle, Email
+- Booking form: Name, Email, Project Type, Timeline, Concept textarea
+- Dual submit: "Send Inquiry" + "WhatsApp Me Directly"
+- Form success feedback message (auto-hides after 7s)
+
+#### Floating WhatsApp Widget
+- Fixed bottom-right, z-50
+- Pulsing green ring animation (waPulse keyframe)
+- Hover tooltip on desktop: "Chat with EC/10"
+- Opens WhatsApp with prefilled message in new tab
+
+#### Footer
+- Brand name + tagline + copyright year (auto)
+- Instagram icon + handle link
+- WhatsApp icon + number link
+
+---
+
+## GIT — WHAT TO PUSH
+
+### Files to include (push all 4):
+
+```
+index.html          ← Main site, clean 777 lines, all features
+styles.css          ← All custom CSS, animations, component styles
+app.js              ← All interactivity (gallery, lightbox, nav, form)
+.vscode/launch.json ← Brave browser debug config (optional — see note below)
+```
+
+### Files automatically excluded (.git/ folder is never pushed as files):
+```
+.git/   ← Git internals — never manually pushed, managed by git itself
+```
+
+### Note on .vscode/launch.json:
+- Safe to push if the team uses VS Code + Brave on the same machine.
+- If this is a solo repo, push it — it saves setup time later.
+- If you plan to share publicly or with others on different setups,
+  add it to .gitignore so they don't get your machine-specific path.
+
+---
+
+## GIT PUSH COMMANDS
+
+Run these in Terminal inside your project folder:
+
+```bash
+cd /Users/kodakandalasanthosh/santhu_port
+
+# Stage all changed files
+git add index.html styles.css app.js
+
+# (Optional) also commit the VS Code launch config
+git add .vscode/launch.json
+
+# Commit with a descriptive message
+git commit -m "feat: EC/10 portfolio — WhatsApp & Instagram integrations, full rebuild
+
+- Brand identity: EC/10 — Epic Captures 10
+- Tagline: Life happens once. I frame what stays.
+- WhatsApp: wa.me/919347419720 with prefilled message (7 touch points)
+- Instagram: @epiccaptures10 (6+ touch points + dedicated Journal section)
+- Floating WhatsApp widget with pulse animation
+- Masonry gallery (12 photos, 6 category filters)
+- Fullscreen lightbox with EXIF toggle and keyboard nav
+- Mobile responsive hamburger menu
+- Contact booking form with WhatsApp secondary CTA
+- Fixed broken merged HTML — clean structural rewrite"
+
+# Push to remote
+git push origin main
+```
+
+---
+
+## CURRENT GIT STATUS (at time of writing)
+
+```
+Branch  : main
+Remote  : origin/main
+State   : 3 files modified, not yet committed
+
+Modified:
+  app.js      (+265 lines clean rewrite)
+  index.html  (+777 lines clean rewrite)
+  styles.css  (+117 lines clean rewrite)
+```
+
+---
+
+## RECOMMENDED .gitignore (create if not present)
+
+```
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# VS Code (optional — remove if you want to share launch config)
+# .vscode/
+
+# Node (not used here, but good to have)
+node_modules/
+```
+
+---
+
+## TECH NOTES
+
+- No build step required — pure static site
+- Tailwind CSS loaded via CDN (no npm needed)
+- Lucide icons loaded via unpkg CDN
+- Google Fonts: Cinzel, Playfair Display, Plus Jakarta Sans
+- All external images: Unsplash (free, no attribution required for portfolio use)
+- WhatsApp links use wa.me API (works on mobile + desktop)
+- Instagram links open in new tab (target="_blank" + rel="noopener noreferrer")
+- Site can be hosted on: GitHub Pages, Netlify, Vercel, or any static host
+

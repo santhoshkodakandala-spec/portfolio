@@ -1,142 +1,117 @@
 /* ==========================================================================
-   EC/10 – Epic Captures 10 | Editorial Filmmaker & Visual Creator Stylesheet
-   Luxury Editorial, Cinematic Typography & Custom Film Textures
+   EC/10 – Epic Captures 10 | Stylesheet
    ========================================================================== */
 
-/* Film Grain Texture */
-.film-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+/* ── Smooth scroll ─────────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+/* ── Custom scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #0a0906; }
+::-webkit-scrollbar-thumb { background: #2a2620; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #c9a96e; }
+
+/* ── Selection ─────────────────────────────────────────────────────────── */
+::selection { background: #c9a96e; color: #000; }
+
+/* ── Film grain overlay ────────────────────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+/* ── Filter pills ──────────────────────────────────────────────────────── */
+.filter-pill {
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 1px solid #2a2620;
+  background: #181510;
+  color: #8a8278;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-pill:hover {
+  border-color: #c9a96e;
+  color: #c9a96e;
+}
+.filter-pill.active {
+  background: #c9a96e;
+  border-color: #c9a96e;
+  color: #000;
 }
 
-::-webkit-scrollbar-track {
-  background: #0d0d0c;
+/* ── Instagram gradient bg ─────────────────────────────────────────────── */
+.instagram-gradient-bg {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-::-webkit-scrollbar-thumb {
-  background: #2a2825;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #b38f5f;
-}
-
-/* Editorial Serif & Display Typography */
-.font-editorial {
-  font-family: 'Playfair Display', Georgia, serif;
-}
-
-.font-display-alt {
-  font-family: 'Cinzel', serif;
-}
-
-/* Cinematic Letterbox Ratio 2.39:1 */
-.aspect-cinema {
-  aspect-ratio: 2.39 / 1;
-}
-
-/* Subtle Film Gate Vignette */
-.cinematic-vignette {
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.7);
-}
-
-/* Contact Sheet Strip Styling */
-.contact-sheet-border {
-  border-left: 2px dashed rgba(179, 143, 95, 0.3);
-  border-right: 2px dashed rgba(179, 143, 95, 0.3);
-}
-
-/* Marquee Animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
+/* ── Contact row component ─────────────────────────────────────────────── */
+.contact-row {
   display: flex;
-  width: 200%;
-  animation: marquee 35s linear infinite;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  background: rgba(17, 16, 9, 0.7);
+  border: 1px solid #2a2620;
+  transition: border-color 0.2s;
+  text-decoration: none;
+  color: #d4d4d8;
 }
 
-.animate-marquee:hover {
-  animation-play-state: paused;
+.contact-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s;
 }
+.contact-row:hover .contact-icon { transform: scale(1.05); }
 
-/* Pulse Glow */
-@keyframes warmPulse {
-
-  0%,
-  100% {
-    opacity: 0.2;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 0.35;
-    transform: scale(1.05);
-  }
+/* ── Form elements ─────────────────────────────────────────────────────── */
+.form-label {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #71717a;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
-
-.ambient-glow {
-  animation: warmPulse 10s ease-in-out infinite;
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(10, 9, 6, 0.7);
+  border: 1px solid #2a2620;
+  color: #fff;
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
 }
+.form-input:focus { border-color: #c9a96e; }
+.form-input::placeholder { color: #3f3c37; }
 
-/* WhatsApp Recognizable Glow & Pulse */
-@keyframes whatsappPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
-  }
-
-  70% {
-    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
+/* ── WhatsApp float pulse ──────────────────────────────────────────────── */
+@keyframes waPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
+.wa-float-btn { animation: waPulse 2.5s infinite; }
 
-.whatsapp-pulse {
-  animation: whatsappPulse 2.4s infinite;
-}
-
-/* Instagram Gradient & Accents */
-.bg-instagram-gradient {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-.text-instagram-gradient {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Image Hover Zoom Transition */
-.zoom-frame {
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.group:hover .zoom-frame {
-  transform: scale(1.04);
-}
-
-/* Hide scrollbar for clean horizontal scrolls */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+/* ── Lightbox body lock ─────────────────────────────────────────────────── */
+body.lb-open { overflow: hidden; }

@@ -1,373 +1,265 @@
 /**
- * EC/10 – Epic Captures 10 | Independent Filmmaker & Visual Creator
- * Gallery filtering, interactive lightbox, EXIF data viewer, mobile nav
+ * EC/10 – Epic Captures 10 | Portfolio Application Logic
+ * Gallery, Lightbox, Filters, Mobile Nav, Form
  */
 
-// Portfolio Photo Dataset with realistic EXIF and metadata
-const photos = [
+/* ══════════════════════════════════
+   DATA
+══════════════════════════════════ */
+const PHOTOS = [
   {
-    id: 1,
-    title: "Golden Hour Reverie",
-    category: "portraits",
-    location: "Pushkar, Rajasthan",
-    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85",
-    camera: "Sony Alpha A7R V",
-    lens: "50mm f/1.2 GM",
-    settings: "1/800s • f/1.4",
-    iso: "ISO 100",
-    span: "row-span-2"
+    id: 1, cat: 'portraits', span: 2,
+    title: 'Golden Hour Reverie', loc: 'Pushkar, Rajasthan',
+    src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Sony A7R V', lens: '50mm f/1.2 GM', set: '1/800s · f/1.4', iso: 'ISO 100'
   },
   {
-    id: 2,
-    title: "Midnight Alley in Shinjuku",
-    category: "street",
-    location: "Tokyo, Japan",
-    src: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=85",
-    camera: "Leica Q3",
-    lens: "Summilux 28mm f/1.7",
-    settings: "1/125s • f/1.7",
-    iso: "ISO 1600",
-    span: "row-span-1"
+    id: 2, cat: 'street', span: 1,
+    title: 'Midnight Alley in Shinjuku', loc: 'Tokyo, Japan',
+    src: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Leica Q3', lens: 'Summilux 28mm f/1.7', set: '1/125s · f/1.7', iso: 'ISO 1600'
   },
   {
-    id: 3,
-    title: "Spiti Valley Solitude",
-    category: "landscape",
-    location: "Himachal Pradesh, India",
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85",
-    camera: "Sony Alpha A7R V",
-    lens: "16-35mm f/2.8 GM",
-    settings: "1/500s • f/8.0",
-    iso: "ISO 200",
-    span: "row-span-2"
+    id: 3, cat: 'landscape', span: 2,
+    title: 'Spiti Valley Solitude', loc: 'Himachal Pradesh, India',
+    src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Sony A7R V', lens: '16-35mm f/2.8 GM', set: '1/500s · f/8', iso: 'ISO 200'
   },
   {
-    id: 4,
-    title: "Geometric Geometry",
-    category: "architecture",
-    location: "Valencia, Spain",
-    src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85",
-    camera: "Sony Alpha A7R V",
-    lens: "24-70mm f/2.8 GM II",
-    settings: "1/400s • f/5.6",
-    iso: "ISO 100",
-    span: "row-span-1"
+    id: 4, cat: 'architecture', span: 1,
+    title: 'Geometric Geometry', loc: 'Valencia, Spain',
+    src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Sony A7R V', lens: '24-70mm f/2.8 GM II', set: '1/400s · f/5.6', iso: 'ISO 100'
   },
   {
-    id: 5,
-    title: "The Elder's Gaze",
-    category: "monochrome",
-    location: "Varanasi, Uttar Pradesh",
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=85",
-    camera: "Leica M11-P",
-    lens: "Noctilux-M 50mm f/0.95",
-    settings: "1/1000s • f/1.2",
-    iso: "ISO 400",
-    span: "row-span-2"
+    id: 5, cat: 'monochrome', span: 2,
+    title: "The Elder's Gaze", loc: 'Varanasi, Uttar Pradesh',
+    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Leica M11-P', lens: 'Noctilux 50mm f/0.95', set: '1/1000s · f/1.2', iso: 'ISO 400'
   },
   {
-    id: 6,
-    title: "Neon Shadows",
-    category: "street",
-    location: "Hong Kong",
-    src: "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1200&q=85",
-    camera: "Sony Alpha A7R V",
-    lens: "35mm f/1.4 GM",
-    settings: "1/160s • f/1.8",
-    iso: "ISO 1250",
-    span: "row-span-1"
+    id: 6, cat: 'street', span: 1,
+    title: 'Neon Shadows', loc: 'Hong Kong',
+    src: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Sony A7R V', lens: '35mm f/1.4 GM', set: '1/160s · f/1.8', iso: 'ISO 1250'
   },
   {
-    id: 7,
-    title: "Silhouette in the Dunes",
-    category: "monochrome",
-    location: "Jaisalmer, Rajasthan",
-    src: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&q=85",
-    camera: "Leica M11-P",
-    lens: "35mm f/1.4 Summilux",
-    settings: "1/2000s • f/4.0",
-    iso: "ISO 100",
-    span: "row-span-1"
+    id: 7, cat: 'monochrome', span: 1,
+    title: 'Silhouette in the Dunes', loc: 'Jaisalmer, Rajasthan',
+    src: 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Leica M11-P', lens: '35mm f/1.4 Summilux', set: '1/2000s · f/4', iso: 'ISO 100'
   },
   {
-    id: 8,
-    title: "Ethereal Morning Mist",
-    category: "landscape",
-    location: "Munnar, Kerala",
-    src: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=85",
-    camera: "DJI Mavic 3 Pro",
-    lens: "Hasselblad 24mm eq.",
-    settings: "1/640s • f/2.8",
-    iso: "ISO 100",
-    span: "row-span-2"
+    id: 8, cat: 'landscape', span: 2,
+    title: 'Ethereal Morning Mist', loc: 'Munnar, Kerala',
+    src: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=85',
+    cam: 'DJI Mavic 3 Pro', lens: 'Hasselblad 24mm eq.', set: '1/640s · f/2.8', iso: 'ISO 100'
   },
   {
-    id: 9,
-    title: "Shadows on Concrete",
-    category: "architecture",
-    location: "Berlin, Germany",
-    src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85",
-    camera: "Sony Alpha A7R V",
-    lens: "24-70mm f/2.8 GM II",
-    settings: "1/320s • f/7.1",
-    iso: "ISO 100",
-    span: "row-span-1"
+    id: 9, cat: 'architecture', span: 1,
+    title: 'Shadows on Concrete', loc: 'Berlin, Germany',
+    src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Sony A7R V', lens: '24-70mm f/2.8 GM II', set: '1/320s · f/7.1', iso: 'ISO 100'
   },
   {
-    id: 10,
-    title: "Editorial Gaze in Silk",
-    category: "portraits",
-    location: "Studio 10, Mumbai",
-    src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=85",
-    camera: "Sony Alpha A7R V",
-    lens: "85mm f/1.4 GM",
-    settings: "1/200s • f/2.0",
-    iso: "ISO 100",
-    span: "row-span-2"
+    id: 10, cat: 'portraits', span: 2,
+    title: 'Editorial Gaze in Silk', loc: 'Studio 10, Mumbai',
+    src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Sony A7R V', lens: '85mm f/1.4 GM', set: '1/200s · f/2', iso: 'ISO 100'
   },
   {
-    id: 11,
-    title: "Rainy Crossing",
-    category: "street",
-    location: "Seoul, South Korea",
-    src: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=85",
-    camera: "Leica Q3",
-    lens: "Summilux 28mm f/1.7",
-    settings: "1/200s • f/2.0",
-    iso: "ISO 800",
-    span: "row-span-1"
+    id: 11, cat: 'street', span: 1,
+    title: 'Rainy Crossing', loc: 'Seoul, South Korea',
+    src: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Leica Q3', lens: 'Summilux 28mm f/1.7', set: '1/200s · f/2', iso: 'ISO 800'
   },
   {
-    id: 12,
-    title: "Alpenglow on Mount Rainier",
-    category: "landscape",
-    location: "Washington, USA",
-    src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85",
-    camera: "Sony Alpha A7R V",
-    lens: "70-200mm f/2.8 GM II",
-    settings: "1/80s • f/11",
-    iso: "ISO 100",
-    span: "row-span-1"
+    id: 12, cat: 'landscape', span: 1,
+    title: 'Alpenglow on Mount Rainier', loc: 'Washington, USA',
+    src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85',
+    cam: 'Sony A7R V', lens: '70-200mm f/2.8 GM II', set: '1/80s · f/11', iso: 'ISO 100'
   }
 ];
 
-// State variables
-let currentFilter = 'all';
-let filteredPhotos = [...photos];
-let activePhotoIndex = 0;
-let isExifVisible = true;
+/* ══════════════════════════════════
+   STATE
+══════════════════════════════════ */
+let filtered   = [...PHOTOS];
+let lbIndex    = 0;
+let exifOpen   = true;
 
-// DOM Elements
-const galleryGrid = document.getElementById('gallery-grid');
-const filterButtons = document.querySelectorAll('.filter-btn');
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-// Lightbox Elements
-const lightbox = document.getElementById('lightbox');
-const lbImage = document.getElementById('lb-image');
-const lbSpinner = document.getElementById('lb-spinner');
-const lbTitle = document.getElementById('lb-title');
-const lbLocation = document.getElementById('lb-location');
-const lbCategory = document.getElementById('lb-category');
-const lbCounter = document.getElementById('lb-counter');
-const lbCloseBtn = document.getElementById('lightbox-close');
-const lbPrevBtn = document.getElementById('lightbox-prev');
-const lbNextBtn = document.getElementById('lightbox-next');
-const toggleExifBtn = document.getElementById('toggle-exif-btn');
-const lbExifPanel = document.getElementById('lb-exif-panel');
-
-// EXIF fields
-const exifCamera = document.getElementById('exif-camera');
-const exifLens = document.getElementById('exif-lens');
-const exifSettings = document.getElementById('exif-settings');
-const exifIso = document.getElementById('exif-iso');
-
-// Render Gallery Cards
+/* ══════════════════════════════════
+   GALLERY RENDER
+══════════════════════════════════ */
 function renderGallery() {
-  if (!galleryGrid) return;
-  galleryGrid.innerHTML = '';
+  const grid = document.getElementById('gallery-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
 
-  filteredPhotos.forEach((photo, index) => {
+  filtered.forEach((photo, idx) => {
     const card = document.createElement('div');
-    card.className = `group relative overflow-hidden rounded-2xl bg-brand-surface border border-brand-border cursor-pointer transition-all duration-500 hover:border-brand-gold/50 ${photo.span || 'row-span-1'}`;
+    card.className = `relative group overflow-hidden rounded-2xl bg-ec-surface border border-ec-border cursor-pointer transition-all duration-500 hover:border-ec-gold/50 row-span-${photo.span}`;
 
     card.innerHTML = `
-      <img 
-        src="${photo.src}" 
-        alt="${photo.title}" 
-        loading="lazy"
-        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-        <span class="text-[10px] uppercase tracking-widest text-brand-gold font-mono">${photo.category}</span>
-        <h3 class="text-base font-display font-medium text-white">${photo.title}</h3>
-        <div class="flex items-center justify-between text-[11px] text-zinc-400 mt-1">
-          <span>${photo.location}</span>
-          <span class="font-mono text-zinc-500">${photo.camera.split(' ')[0]}</span>
-        </div>
+      <img src="${photo.src}" alt="${photo.title}" loading="lazy"
+           class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute inset-0 flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <span class="text-[9px] uppercase tracking-widest text-ec-gold font-mono">${photo.cat}</span>
+        <h3 class="text-sm font-display font-medium text-white mt-0.5">${photo.title}</h3>
+        <p class="text-[10px] text-zinc-400 mt-0.5 font-mono">${photo.loc}</p>
       </div>
-      <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-        <span class="w-8 h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
-          <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-        </span>
+      <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div class="w-7 h-7 rounded-full bg-black/60 backdrop-blur border border-white/20 flex items-center justify-center text-white">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
       </div>
     `;
 
-    card.addEventListener('click', () => {
-      openLightbox(index);
-    });
-
-    galleryGrid.appendChild(card);
-  });
-
-  if (window.lucide) {
-    lucide.createIcons();
-  }
-}
-
-// Filtering
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterButtons.forEach(b => {
-      b.classList.remove('active', 'bg-brand-gold', 'text-black');
-      b.classList.add('bg-brand-surface', 'text-zinc-300');
-    });
-
-    btn.classList.add('active', 'bg-brand-gold', 'text-black');
-    btn.classList.remove('bg-brand-surface', 'text-zinc-300');
-
-    currentFilter = btn.getAttribute('data-category');
-    if (currentFilter === 'all') {
-      filteredPhotos = [...photos];
-    } else {
-      filteredPhotos = photos.filter(p => p.category.toLowerCase() === currentFilter.toLowerCase());
-    }
-
-    renderGallery();
-  });
-});
-
-// Lightbox Open & Update
-function openLightbox(index) {
-  activePhotoIndex = index;
-  updateLightboxContent();
-  lightbox.classList.remove('hidden');
-  requestAnimationFrame(() => {
-    lightbox.classList.remove('opacity-0');
-  });
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  lightbox.classList.add('opacity-0');
-  setTimeout(() => {
-    lightbox.classList.add('hidden');
-    document.body.style.overflow = '';
-  }, 300);
-}
-
-function updateLightboxContent() {
-  const photo = filteredPhotos[activePhotoIndex];
-  if (!photo) return;
-
-  lbSpinner.classList.remove('hidden');
-  lbImage.classList.add('opacity-0');
-
-  const highResImg = new Image();
-  highResImg.src = photo.src;
-  highResImg.onload = () => {
-    lbImage.src = photo.src;
-    lbImage.alt = photo.title;
-    lbSpinner.classList.add('hidden');
-    lbImage.classList.remove('opacity-0');
-  };
-
-  lbTitle.textContent = photo.title;
-  lbLocation.textContent = photo.location;
-  lbCategory.textContent = photo.category.toUpperCase();
-  lbCounter.textContent = `${String(activePhotoIndex + 1).padStart(2, '0')} / ${String(filteredPhotos.length).padStart(2, '0')}`;
-
-  exifCamera.textContent = photo.camera;
-  exifLens.textContent = photo.lens;
-  exifSettings.textContent = photo.settings;
-  exifIso.textContent = photo.iso;
-}
-
-function nextPhoto() {
-  activePhotoIndex = (activePhotoIndex + 1) % filteredPhotos.length;
-  updateLightboxContent();
-}
-
-function prevPhoto() {
-  activePhotoIndex = (activePhotoIndex - 1 + filteredPhotos.length) % filteredPhotos.length;
-  updateLightboxContent();
-}
-
-// Lightbox Event Listeners
-if (lbCloseBtn) lbCloseBtn.addEventListener('click', closeLightbox);
-if (lbNextBtn) lbNextBtn.addEventListener('click', nextPhoto);
-if (lbPrevBtn) lbPrevBtn.addEventListener('click', prevPhoto);
-
-if (lightbox) {
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox || e.target.classList.contains('select-none')) {
-      closeLightbox();
-    }
+    card.addEventListener('click', () => openLightbox(idx));
+    grid.appendChild(card);
   });
 }
 
-// Keyboard Navigation
-window.addEventListener('keydown', (e) => {
-  if (lightbox && !lightbox.classList.contains('hidden')) {
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowRight') nextPhoto();
-    if (e.key === 'ArrowLeft') prevPhoto();
-  }
-});
+/* ══════════════════════════════════
+   FILTER
+══════════════════════════════════ */
+document.getElementById('filter-bar')?.addEventListener('click', (e) => {
+  const btn = e.target.closest('.filter-pill');
+  if (!btn) return;
 
-// Toggle EXIF Drawer
-if (toggleExifBtn && lbExifPanel) {
-  toggleExifBtn.addEventListener('click', () => {
-    isExifVisible = !isExifVisible;
-    if (isExifVisible) {
-      lbExifPanel.classList.remove('hidden');
-    } else {
-      lbExifPanel.classList.add('hidden');
-    }
-  });
-}
+  document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 
-// Mobile Menu Toggle
-if (mobileMenuBtn && mobileMenu) {
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-  mobileNavLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-    });
-  });
-}
-
-// Booking Form submission mock feedback
-const bookingForm = document.getElementById('booking-form');
-const formFeedback = document.getElementById('form-feedback');
-if (bookingForm && formFeedback) {
-  bookingForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    formFeedback.classList.remove('hidden');
-    bookingForm.reset();
-    setTimeout(() => {
-      formFeedback.classList.add('hidden');
-    }, 6000);
-  });
-}
-
-// Initialize gallery on page load
-document.addEventListener('DOMContentLoaded', () => {
+  const cat = btn.dataset.cat;
+  filtered = cat === 'all' ? [...PHOTOS] : PHOTOS.filter(p => p.cat === cat);
   renderGallery();
 });
 
+/* ══════════════════════════════════
+   LIGHTBOX
+══════════════════════════════════ */
+const lb      = document.getElementById('lightbox');
+const lbImg   = document.getElementById('lb-img');
+const lbSpin  = document.getElementById('lb-spinner');
+const lbTitle = document.getElementById('lb-title');
+const lbLoc   = document.getElementById('lb-loc');
+const lbCat   = document.getElementById('lb-cat');
+const lbCount = document.getElementById('lb-count');
+const lbExif  = document.getElementById('lb-exif');
+const exCam   = document.getElementById('ex-cam');
+const exLens  = document.getElementById('ex-lens');
+const exSet   = document.getElementById('ex-set');
+const exIso   = document.getElementById('ex-iso');
+
+function openLightbox(idx) {
+  lbIndex = idx;
+  updateLightbox();
+  lb.classList.remove('hidden');
+  document.body.classList.add('lb-open');
+  requestAnimationFrame(() => lb.classList.remove('opacity-0'));
+}
+
+function closeLightbox() {
+  lb.classList.add('opacity-0');
+  document.body.classList.remove('lb-open');
+  setTimeout(() => lb.classList.add('hidden'), 300);
+}
+
+function updateLightbox() {
+  const p = filtered[lbIndex];
+  if (!p) return;
+
+  lbSpin.classList.remove('hidden');
+  lbImg.classList.add('opacity-0');
+
+  const tmp = new Image();
+  tmp.src = p.src;
+  tmp.onload = () => {
+    lbImg.src = p.src;
+    lbImg.alt = p.title;
+    lbSpin.classList.add('hidden');
+    lbImg.classList.remove('opacity-0');
+  };
+
+  lbTitle.textContent = p.title;
+  lbLoc.textContent   = p.loc;
+  lbCat.textContent   = p.cat.toUpperCase();
+  lbCount.textContent = `${String(lbIndex + 1).padStart(2, '0')} / ${String(filtered.length).padStart(2, '0')}`;
+  exCam.textContent   = p.cam;
+  exLens.textContent  = p.lens;
+  exSet.textContent   = p.set;
+  exIso.textContent   = p.iso;
+}
+
+document.getElementById('lb-close')?.addEventListener('click', closeLightbox);
+document.getElementById('lb-prev')?.addEventListener('click', () => {
+  lbIndex = (lbIndex - 1 + filtered.length) % filtered.length;
+  updateLightbox();
+});
+document.getElementById('lb-next')?.addEventListener('click', () => {
+  lbIndex = (lbIndex + 1) % filtered.length;
+  updateLightbox();
+});
+document.getElementById('lb-exif-toggle')?.addEventListener('click', () => {
+  exifOpen = !exifOpen;
+  lbExif.style.display = exifOpen ? '' : 'none';
+});
+
+lb?.addEventListener('click', (e) => {
+  if (e.target === lb) closeLightbox();
+});
+
+window.addEventListener('keydown', (e) => {
+  if (!lb || lb.classList.contains('hidden')) return;
+  if (e.key === 'Escape')      closeLightbox();
+  if (e.key === 'ArrowRight')  { lbIndex = (lbIndex + 1) % filtered.length; updateLightbox(); }
+  if (e.key === 'ArrowLeft')   { lbIndex = (lbIndex - 1 + filtered.length) % filtered.length; updateLightbox(); }
+});
+
+/* ══════════════════════════════════
+   MOBILE NAV (HAMBURGER)
+══════════════════════════════════ */
+const hamburger = document.getElementById('hamburger');
+const drawer    = document.getElementById('mobile-drawer');
+
+hamburger?.addEventListener('click', () => {
+  const open = !drawer.classList.contains('hidden');
+  drawer.classList.toggle('hidden', open);
+  hamburger.setAttribute('aria-expanded', String(!open));
+  // swap icon
+  hamburger.innerHTML = open
+    ? '<i data-lucide="menu" class="w-5 h-5 pointer-events-none"></i>'
+    : '<i data-lucide="x" class="w-5 h-5 pointer-events-none"></i>';
+  lucide.createIcons();
+});
+
+// Close drawer on mobile nav link click
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', () => {
+    drawer.classList.add('hidden');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.innerHTML = '<i data-lucide="menu" class="w-5 h-5 pointer-events-none"></i>';
+    lucide.createIcons();
+  });
+});
+
+/* ══════════════════════════════════
+   CONTACT FORM (mock submit)
+══════════════════════════════════ */
+document.getElementById('booking-form')?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const success = document.getElementById('form-success');
+  if (success) {
+    success.classList.remove('hidden');
+    e.target.reset();
+    setTimeout(() => success.classList.add('hidden'), 7000);
+  }
+});
+
+/* ══════════════════════════════════
+   INIT
+══════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  renderGallery();
+});

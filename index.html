@@ -1,46 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Santhosh Kodakandala | Visual Storyteller & Photography Portfolio</title>
-  <meta name="description"
-    content="Cinematic photography portfolio capturing moments, light, and visual stories across portraits, street, landscape, and architectural work.">
-  <title>EC/10 – Epic Captures 10 | Independent Filmmaker & Visual Creator</title>
-  <meta name="description"
-    content="Official creative portfolio of EC/10 (Epic Captures 10) – Independent filmmaker and visual creator. Life happens once. I frame what stays.">
+  <title>EC/10 — Epic Captures 10 | Independent Filmmaker & Visual Creator</title>
+  <meta name="description" content="Official creative portfolio of EC/10 — Independent filmmaker and visual creator. Life happens once. I frame what stays.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            brand: {
-              black: '#09090b',
-              surface: '#121215',
-              card: '#18181c',
-              border: '#27272a',
-              gold: '#e6c387',
-              goldHover: '#f3d59e',
-              amber: '#d97706',
-              muted: '#a1a1aa'
-            }
+            'ec-black':  '#0a0906',
+            'ec-surface':'#111009',
+            'ec-card':   '#181510',
+            'ec-border': '#2a2620',
+            'ec-gold':   '#c9a96e',
+            'ec-gold2':  '#e2c48a',
+            'ec-muted':  '#8a8278',
           },
           fontFamily: {
-            serif: ['Playfair Display', 'serif'],
+            serif:   ['"Playfair Display"', 'Georgia', 'serif'],
             display: ['Cinzel', 'serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            sans:    ['"Plus Jakarta Sans"', 'sans-serif'],
           }
         }
       }
@@ -48,1128 +37,741 @@
   </script>
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
 
-  <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body
-  class="bg-brand-black text-zinc-100 font-sans selection:bg-brand-gold selection:text-black antialiased relative overflow-x-hidden">
+<body class="bg-ec-black text-zinc-100 font-sans antialiased">
 
-  <!-- Film Grain Overlay -->
-  <div class="fixed inset-0 pointer-events-none opacity-[0.035] z-50 grain-bg"></div>
-  <div class="fixed inset-0 pointer-events-none opacity-[0.035] z-50 film-grain"></div>
+  <!-- ░░ FILM GRAIN OVERLAY ░░ -->
+  <div class="grain-overlay" aria-hidden="true"></div>
 
-  <!-- Ambient Glow Backgrounds -->
-  <div
-    class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-[140px] pointer-events-none -z-10">
-  </div>
-  <div
-    class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-amber-600/10 rounded-full blur-[160px] pointer-events-none -z-10">
-  </div>
+  <!-- ░░ AMBIENT GLOWS ░░ -->
+  <div class="pointer-events-none fixed -top-32 -left-32 w-[520px] h-[520px] rounded-full bg-ec-gold/8 blur-[160px] -z-10" aria-hidden="true"></div>
+  <div class="pointer-events-none fixed bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-amber-800/8 blur-[140px] -z-10" aria-hidden="true"></div>
 
-  <!-- Navigation Header -->
-  <header
-    class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-brand-black/80 border-b border-brand-border/60 transition-all duration-300"
-    id="navbar">
-    <header
-      class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-brand-black/85 border-b border-brand-border/60 transition-all duration-300"
-      id="navbar">
-      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <!-- Logo / Brand -->
-        <!-- Logo / Brand Identity -->
-        <a href="#home" class="group flex items-center gap-3">
-          <div
-            class="w-10 h-10 rounded-full border border-brand-gold/40 flex items-center justify-center bg-brand-surface group-hover:border-brand-gold transition-colors">
-            <span class="font-display font-bold text-brand-gold text-lg tracking-wider">SK</span>
-            <div
-              class="w-10 h-10 rounded-full border border-brand-gold/50 flex items-center justify-center bg-brand-surface group-hover:border-brand-gold transition-colors shadow-lg shadow-brand-gold/5">
-              <span class="font-display font-bold text-brand-gold text-sm tracking-widest">EC</span>
-            </div>
-            <div>
-              <span
-                class="font-display tracking-[0.25em] text-sm uppercase block font-semibold text-zinc-100 group-hover:text-brand-gold transition-colors">Santhu</span>
-              <span class="text-[10px] tracking-[0.3em] uppercase text-brand-muted block">Visuals</span>
-              <div class="flex items-center gap-1.5">
-                <span
-                  class="font-display tracking-[0.25em] text-sm uppercase block font-semibold text-zinc-100 group-hover:text-brand-gold transition-colors">EC/10</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
-              </div>
-              <span class="text-[9px] tracking-[0.28em] uppercase text-brand-muted block font-mono">Epic Captures
-                10</span>
-            </div>
-        </a>
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════ -->
+  <header id="site-nav" class="fixed top-0 inset-x-0 z-50 border-b border-ec-border/60 backdrop-blur-xl bg-ec-black/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-18 flex items-center justify-between gap-4">
 
-        <!-- Desktop Nav Links -->
-        <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em] font-medium text-zinc-300">
-          <a href="#portfolio" class="hover:text-brand-gold transition-colors py-1 relative nav-link">Portfolio</a>
-          <a href="#stories" class="hover:text-brand-gold transition-colors py-1 relative nav-link">Stories</a>
-          <a href="#about" class="hover:text-brand-gold transition-colors py-1 relative nav-link">About</a>
-          <a href="#gear" class="hover:text-brand-gold transition-colors py-1 relative nav-link">Gear</a>
-          <nav class="hidden md:flex items-center gap-7 text-xs uppercase tracking-[0.2em] font-medium text-zinc-300">
-            <a href="#portfolio" class="hover:text-brand-gold transition-colors py-1 relative nav-link">Films &
-              Stills</a>
-            <a href="#stories" class="hover:text-brand-gold transition-colors py-1 relative nav-link">Narratives</a>
-            <a href="#about" class="hover:text-brand-gold transition-colors py-1 relative nav-link">Creator</a>
-            <a href="#gear" class="hover:text-brand-gold transition-colors py-1 relative nav-link">Arsenal</a>
-            <a href="#social"
-              class="hover:text-brand-gold transition-colors py-1 relative nav-link flex items-center gap-1.5">
-              <span>Journal</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
-            </a>
-            <a href="#contact" class="hover:text-brand-gold transition-colors py-1 relative nav-link">Contact</a>
-          </nav>
-
-          <!-- Action Button -->
-          <div class="flex items-center gap-4">
-            <a href="#contact"
-              class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-gold text-black text-xs uppercase tracking-widest font-semibold hover:bg-brand-goldHover transition-all shadow-lg shadow-brand-gold/10 hover:shadow-brand-gold/25 active:scale-95">
-              <span>Book Shoot</span>
-              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-              <!-- Action & Social Badges -->
-              <div class="flex items-center gap-3 sm:gap-4">
-                <!-- Clickable Instagram Link in Header -->
-                <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
-                  class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-surface border border-brand-border/80 text-zinc-300 hover:text-white hover:border-zinc-500 transition-all text-xs group"
-                  title="Follow @epiccaptures10 on Instagram">
-                  <svg class="w-3.5 h-3.5 fill-current text-rose-400 group-hover:scale-110 transition-transform"
-                    viewBox="0 0 24 24">
-                    <path
-                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                  </svg>
-                  <span class="font-mono text-[11px] tracking-tight">@epiccaptures10</span>
-                </a>
-
-                <!-- WhatsApp Quick Connect Button -->
-                <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I'm%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let's%20connect!"
-                  target="_blank" rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-black text-xs font-semibold uppercase tracking-wider transition-all shadow-lg shadow-[#25D366]/20 hover:scale-105 active:scale-95"
-                  title="Chat on WhatsApp">
-                  <svg class="w-4 h-4 fill-black" viewBox="0 0 24 24">
-                    <path
-                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                  </svg>
-                  <span class="hidden sm:inline">WhatsApp</span>
-                </a>
-
-                <!-- Mobile Menu Toggle -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-400 hover:text-white"
-                  aria-label="Toggle menu">
-                  <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-              </div>
-          </div>
-
-          <!-- Mobile Navigation Drawer -->
-          <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-6 bg-brand-surface border-b border-brand-border">
-            <div id="mobile-menu" class="hidden md:hidden px-6 pt-3 pb-6 bg-brand-surface border-b border-brand-border">
-              <div class="flex flex-col gap-4 text-xs uppercase tracking-[0.2em] font-medium text-zinc-300">
-                <a href="#portfolio"
-                  class="mobile-nav-link py-2 border-b border-brand-border/40 hover:text-brand-gold">Portfolio</a>
-                <a href="#stories"
-                  class="mobile-nav-link py-2 border-b border-brand-border/40 hover:text-brand-gold">Stories</a>
-                <a href="#about"
-                  class="mobile-nav-link py-2 border-b border-brand-border/40 hover:text-brand-gold">About</a>
-                <a href="#gear"
-                  class="mobile-nav-link py-2 border-b border-brand-border/40 hover:text-brand-gold">Gear</a>
-                <a href="#portfolio"
-                  class="mobile-nav-link py-2 border-b border-brand-border/40 hover:text-brand-gold">Films & Stills</a>
-                <a href="#stories"
-                  class="mobile-nav-link py-2 border-b border-brand-border/40 hover:text-brand-gold">Narratives</a>
-                <a href="#about"
-                  class="mobile-nav-link py-2 border-b border-brand-border/40 hover:text-brand-gold">Creator</a>
-                <a href="#gear"
-                  class="mobile-nav-link py-2 border-b border-brand-border/40 hover:text-brand-gold">Arsenal</a>
-                <a href="#social"
-                  class="mobile-nav-link py-2 border-b border-brand-border/40 hover:text-brand-gold">Instagram Feed</a>
-                <a href="#contact" class="mobile-nav-link py-2 hover:text-brand-gold">Contact</a>
-                <a href="#contact"
-                  class="mt-2 text-center py-3 rounded-full bg-brand-gold text-black font-semibold uppercase tracking-widest text-xs">Book
-                  Shoot</a>
-
-                <div class="pt-2 flex flex-col gap-2.5">
-                  <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I'm%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let's%20connect!"
-                    target="_blank" rel="noopener noreferrer"
-                    class="text-center py-3 rounded-xl bg-[#25D366] text-black font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4 fill-black" viewBox="0 0 24 24">
-                      <path
-                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                    </svg>
-                    <span>WhatsApp Direct Chat</span>
-                  </a>
-                  <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
-                    class="text-center py-3 rounded-xl bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2">
-                    <span>Follow @epiccaptures10</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen pt-28 pb-16 px-6 max-w-7xl mx-auto flex flex-col justify-between">
-      <!-- Top Meta -->
-      <div
-        class="flex flex-wrap items-center justify-between gap-4 py-4 text-xs uppercase tracking-[0.25em] text-zinc-400 border-b border-brand-border/50">
-        <span class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          Available for Selected Projects & Worldwide Travel
-          EC/10 • Available Worldwide for Cinema, Commercial & Narrative Commissions
-        </span>
-        <span>Based in Hyderabad & Bangalore / Global</span>
-        <span class="font-mono text-zinc-500">2.39:1 Anamorphic • 35mm Raw</span>
-      </div>
-
-      <!-- Hero Center Title & Pitch -->
-      <div class="my-auto py-12 md:py-20 grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-8 space-y-6">
-          <div
-            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-surface border border-brand-border/70 text-brand-gold text-xs tracking-widest uppercase">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-            <span>Fine-Art & Editorial Photography</span>
-            <i data-lucide="clapperboard" class="w-3.5 h-3.5"></i>
-            <span>Independent Filmmaker & Visual Creator</span>
-          </div>
-          <h1
-            class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-medium leading-[1.05] tracking-tight">
-            Capturing the <br>
-            <span class="font-serif italic font-normal text-brand-gold">unspoken silence</span> <br>
-            between frames.
-            Life happens once. <br>
-            <span class="font-serif italic font-normal text-brand-gold">I frame what stays.</span>
-          </h1>
-          <p class="text-zinc-400 max-w-xl text-base md:text-lg font-light leading-relaxed">
-            Through deliberate composition, natural light, and raw human emotion, I craft cinematic visual stories that
-            preserve timeless moments.
-            EC/10 translates fleeting human presence, raw emotion, and atmospheric light into timeless cinematic visual
-            stories and editorial stills.
-          </p>
-          <div class="pt-4 flex flex-wrap items-center gap-4">
-            <a href="#portfolio"
-              class="px-7 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] hover:bg-brand-gold transition-all duration-300 flex items-center gap-2 group shadow-xl">
-              <span>Explore Work</span>
-              <span>Explore Projects</span>
-              <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"></i>
-            </a>
-            <a href="#stories"
-              class="px-7 py-3.5 rounded-full border border-zinc-700 hover:border-zinc-400 text-zinc-200 font-medium text-xs uppercase tracking-[0.2em] transition-colors">
-              View Photo Essays
-              <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I'm%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let's%20connect!"
-                target="_blank" rel="noopener noreferrer"
-                class="px-7 py-3.5 rounded-full border border-[#25D366]/40 hover:border-[#25D366] text-white hover:text-[#25D366] font-medium text-xs uppercase tracking-[0.2em] transition-all flex items-center gap-2 bg-[#25D366]/10">
-                <svg class="w-3.5 h-3.5 fill-[#25D366]" viewBox="0 0 24 24">
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
-                <span>WhatsApp Chat</span>
-              </a>
-          </div>
+      <!-- Brand -->
+      <a href="#home" class="flex items-center gap-3 group shrink-0">
+        <div class="w-9 h-9 rounded-full border border-ec-gold/40 group-hover:border-ec-gold bg-ec-surface flex items-center justify-center transition-colors">
+          <span class="font-display text-ec-gold text-xs font-bold tracking-widest">EC</span>
         </div>
-
-        <!-- Hero Visual Teaser / Featured Frame -->
-        <div class="lg:col-span-4 relative group">
-          <div
-            class="relative overflow-hidden rounded-2xl border border-brand-border shadow-2xl bg-brand-surface aspect-[4/5]">
-            <img id="hero-feature-img"
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85"
-              alt="Hero Portrait Showcase" alt="EC/10 Hero Visual"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              loading="eager">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end text-xs">
-              <div>
-                <p class="text-brand-gold font-display text-sm tracking-wide">Amber Horizons</p>
-                <p class="text-zinc-400 text-[11px] font-mono">Sony A7R V • 50mm f/1.2 GM</p>
-                <p class="text-brand-gold font-display text-sm tracking-wide">Amber Horizons • Reel 01</p>
-                <p class="text-zinc-400 text-[11px] font-mono">Sony FX3 / A7R V • 50mm f/1.2 GM</p>
-              </div>
-              <span
-                class="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-widest text-zinc-300">Featured</span>
-              <span
-                class="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-widest text-zinc-300">EC/10
-                Cut</span>
-            </div>
-          </div>
-          <!-- Decorative frame edge -->
-          <div
-            class="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border border-brand-gold/20 -z-10 group-hover:border-brand-gold/40 transition-colors">
-          </div>
-        </div>
-      </div>
-
-      <!-- Quick Stats Ticker -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-brand-border/50 text-center md:text-left">
-        <div>
-          <div class="text-3xl font-display font-bold text-white tracking-tight">10+</div>
-          <div class="text-xs uppercase tracking-widest text-brand-muted mt-1">Years Behind Lens</div>
-          <div class="text-3xl font-display font-bold text-white tracking-tight">EC/10</div>
-          <div class="text-xs uppercase tracking-widest text-brand-muted mt-1">Epic Captures 10</div>
-        </div>
-        <div>
-          <div class="text-3xl font-display font-bold text-white tracking-tight">40+</div>
-          <div class="text-xs uppercase tracking-widest text-brand-muted mt-1">Exhibitions & Features</div>
-          <div class="text-xs uppercase tracking-widest text-brand-muted mt-1">Film & Photo Commissions</div>
-        </div>
-        <div>
-          <div class="text-3xl font-display font-bold text-white tracking-tight">22</div>
-          <div class="text-xs uppercase tracking-widest text-brand-muted mt-1">Countries Documented</div>
-          <div class="text-3xl font-display font-bold text-white tracking-tight">@epiccaptures10</div>
-          <div class="text-xs uppercase tracking-widest text-brand-muted mt-1">Creator Community</div>
-        </div>
-        <div>
-          <div class="text-3xl font-display font-bold text-white tracking-tight">100%</div>
-          <div class="text-xs uppercase tracking-widest text-brand-muted mt-1">Natural Light Purist</div>
-          <div class="text-xs uppercase tracking-widest text-brand-muted mt-1">Independent Vision</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Curated Portfolio Section -->
-    <section id="portfolio" class="py-24 px-6 max-w-7xl mx-auto">
-      <!-- Section Title & Filter Tabs -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
-        <div>
-          <div class="flex items-center gap-2 text-brand-gold text-xs tracking-widest uppercase mb-2">
-            <span class="w-8 h-[1px] bg-brand-gold"></span>
-            <span>Curated Works</span>
-          </div>
-          <h2 class="text-3xl sm:text-5xl font-display font-semibold tracking-tight">Selected Galleries</h2>
-          <h2 class="text-3xl sm:text-5xl font-display font-semibold tracking-tight">Selected Films & Galleries</h2>
-        </div>
-
-        <!-- Category Filter Pills -->
-        <div class="flex flex-wrap items-center gap-2" id="filter-container">
-          <button
-            class="filter-btn active px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all"
-            data-category="all">
-            All (15)
-            All (12)
-          </button>
-          <button class="filter-btn px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all"
-            data-category="portraits">
-            Portraits
-          </button>
-          <button class="filter-btn px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all"
-            data-category="street">
-            Street & Urban
-          </button>
-          <button class="filter-btn px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all"
-            data-category="landscape">
-            Landscape
-          </button>
-          <button class="filter-btn px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all"
-            data-category="architecture">
-            Architecture
-          </button>
-          <button class="filter-btn px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all"
-            data-category="monochrome">
-            Monochrome
-          </button>
-        </div>
-      </div>
-
-      <!-- Dynamic Masonry Grid -->
-      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
-        <!-- Injected dynamically via app.js -->
-      </div>
-    </section>
-
-    <!-- Photo Essays & Stories Section -->
-    <section id="stories" class="py-24 px-6 bg-brand-surface/60 border-y border-brand-border/60">
-      <div class="max-w-7xl mx-auto">
-        <div class="max-w-2xl mb-16">
-          <div class="flex items-center gap-2 text-brand-gold text-xs tracking-widest uppercase mb-2">
-            <span class="w-8 h-[1px] bg-brand-gold"></span>
-            <span>Documentary Series</span>
-            <span>Documentary Narratives</span>
-          </div>
-          <h2 class="text-3xl sm:text-5xl font-display font-semibold tracking-tight">Visual Stories & Essays</h2>
-          <p class="text-zinc-400 mt-4 text-sm md:text-base leading-relaxed">
-            Deep dives into particular places, cultures, and emotional landscapes told through coherent multi-frame
-            essays.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Story 1 -->
-          <article
-            class="group relative rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/50 transition-all duration-500">
-            <div class="aspect-[16/11] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80"
-                alt="Monsoon Chronicles"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy">
-            </div>
-            <div class="p-6">
-              <span class="text-[11px] font-mono uppercase tracking-widest text-brand-gold">Photo Essay • 12
-                Frames</span>
-              <span class="text-[11px] font-mono uppercase tracking-widest text-brand-gold">Film & Photo Essay • 12
-                Frames</span>
-              <h3 class="text-xl font-display font-semibold mt-2 group-hover:text-brand-gold transition-colors">Monsoon
-                in Varanasi</h3>
-              <p class="text-zinc-400 text-xs sm:text-sm mt-3 line-clamp-3 leading-relaxed">
-                Echoes along the sacred ghats as the first monsoon showers blend ancient stone, rising mist, and quiet
-                prayers.
-              </p>
-              <div
-                class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs text-zinc-300">
-                <span class="font-mono text-zinc-500">Aug 2025</span>
-                <span class="group-hover:text-brand-gold flex items-center gap-1 font-medium">Read Essay <i
-                    data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Story 2 -->
-          <article
-            class="group relative rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/50 transition-all duration-500">
-            <div class="aspect-[16/11] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1000&q=80"
-                alt="Neon Solitude"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy">
-            </div>
-            <div class="p-6">
-              <span class="text-[11px] font-mono uppercase tracking-widest text-brand-gold">Street Series • 18
-                Frames</span>
-              <span class="text-[11px] font-mono uppercase tracking-widest text-brand-gold">Street Narrative • 18
-                Frames</span>
-              <h3 class="text-xl font-display font-semibold mt-2 group-hover:text-brand-gold transition-colors">Midnight
-                in Shinjuku</h3>
-              <p class="text-zinc-400 text-xs sm:text-sm mt-3 line-clamp-3 leading-relaxed">
-                Navigating the neon labyrinth of alleys, wet tarmac reflections, and lone commuters in the beating heart
-                of Tokyo.
-              </p>
-              <div
-                class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs text-zinc-300">
-                <span class="font-mono text-zinc-500">Oct 2025</span>
-                <span class="group-hover:text-brand-gold flex items-center gap-1 font-medium">Read Essay <i
-                    data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Story 3 -->
-          <article
-            class="group relative rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/50 transition-all duration-500">
-            <div class="aspect-[16/11] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80"
-                alt="Himalayan Whispers"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy">
-            </div>
-            <div class="p-6">
-              <span class="text-[11px] font-mono uppercase tracking-widest text-brand-gold">Expedition • 15
-                Frames</span>
-              <span class="text-[11px] font-mono uppercase tracking-widest text-brand-gold">Expedition Doc • 15
-                Frames</span>
-              <h3 class="text-xl font-display font-semibold mt-2 group-hover:text-brand-gold transition-colors">Highland
-                Whispers: Spiti</h3>
-              <p class="text-zinc-400 text-xs sm:text-sm mt-3 line-clamp-3 leading-relaxed">
-                Arid high-altitude silence, ancient monasteries perched over dizzying cliffs, and starlit skies under
-                sub-zero temperatures.
-              </p>
-              <div
-                class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs text-zinc-300">
-                <span class="font-mono text-zinc-500">Jan 2026</span>
-                <span class="group-hover:text-brand-gold flex items-center gap-1 font-medium">Read Essay <i
-                    data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- About & Philosophy Section -->
-    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-12 gap-16 items-center">
-        <!-- Portrait / Photographer Photo -->
-        <!-- Portrait / Creator Photo -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative overflow-hidden rounded-2xl border border-brand-border shadow-2xl bg-brand-surface">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80"
-              alt="Santhosh Kodakandala" alt="EC/10 Creator"
-              class="w-full aspect-[4/5] object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
-              loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent"></div>
-            <div class="absolute bottom-6 left-6 right-6">
-              <h3 class="text-xl font-display font-semibold">Santhosh Kodakandala</h3>
-              <p class="text-brand-gold text-xs tracking-widest uppercase mt-0.5">Photographer & Visual Artist</p>
-              <div class="flex items-center gap-2 mb-1">
-                <span
-                  class="px-2 py-0.5 rounded bg-brand-gold/20 text-brand-gold text-[10px] font-mono font-bold tracking-widest uppercase border border-brand-gold/30">EC/10</span>
-                <span class="text-xs text-zinc-400">Epic Captures 10</span>
-              </div>
-              <h3 class="text-xl font-display font-semibold">Independent Visual Creator</h3>
-              <p class="text-brand-gold text-xs tracking-widest uppercase mt-0.5">Filmmaker & Photographer</p>
-            </div>
-          </div>
-          <!-- Decorative frame border -->
-          <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-brand-gold/60 pointer-events-none">
-          </div>
-        </div>
-
-        <!-- Philosophy & Bio -->
-        <div class="lg:col-span-7 space-y-6">
-          <div class="flex items-center gap-2 text-brand-gold text-xs tracking-widest uppercase">
-            <span class="w-8 h-[1px] bg-brand-gold"></span>
-            <span>Artistic Philosophy</span>
-            <span>Creative Philosophy</span>
-          </div>
-          <h2 class="text-3xl sm:text-5xl font-display font-semibold leading-tight">
-            "The best photograph is not taken; it is waited for."
-            "Life happens once. <br class="hidden sm:inline">I frame what stays."
-          </h2>
-          <div class="space-y-4 text-zinc-300 text-sm md:text-base leading-relaxed font-light">
-            <p>
-              Photography for me is an act of deep listening. It is about understanding the geometry of natural shadows,
-              catching the fleeting gaze before someone realizes they are being watched, and letting the light narrate
-              the unwritten truth of a scene.
-              EC/10 (Epic Captures 10) was born from a desire to break away from sterile, cookie-cutter commercial
-              productions. Filmmaking and photography for me are intimate, sensory crafts—capturing the weight of
-              silence between two words, the cadence of natural light across a face, and the honest texture of human
-              memory.
-            </p>
-            <p>
-              Whether standing at 14,000 feet waiting for morning alpine alpenglow or tracking shadows across bustling
-              city crossroads, my mission is simple: to make ordinary moments feel like timeless cinema.
-              Operating independently allows me to stay agile and deeply personal with every project. Whether it's a
-              narrative cinema short, an evocative fashion editorial, or an authentic human documentary, every frame is
-              cut with purpose.
-            </p>
-          </div>
-
-          <div class="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-brand-border/60">
-            <div>
-              <span class="block text-xs uppercase tracking-widest text-zinc-500">Specializations</span>
-              <span class="block text-sm font-medium text-zinc-200 mt-1">Portraits, Street, Fine-Art</span>
-              <span class="block text-xs uppercase tracking-widest text-zinc-500">Medium</span>
-              <span class="block text-sm font-medium text-zinc-200 mt-1">Cinematography & 35mm Stills</span>
-            </div>
-            <div>
-              <span class="block text-xs uppercase tracking-widest text-zinc-500">Publications</span>
-              <span class="block text-sm font-medium text-zinc-200 mt-1">National Geo Traveler, Vogue India</span>
-              <span class="block text-xs uppercase tracking-widest text-zinc-500">Instagram Handle</span>
-              <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
-                class="block text-sm font-medium text-brand-gold hover:underline mt-1">@epiccaptures10</a>
-            </div>
-            <div>
-              <span class="block text-xs uppercase tracking-widest text-zinc-500">Prints & Editions</span>
-              <span class="block text-sm font-medium text-zinc-200 mt-1">Archival Museum Prints</span>
-              <span class="block text-xs uppercase tracking-widest text-zinc-500">Direct Chat</span>
-              <a href="https://wa.me/919347419720" target="_blank" rel="noopener noreferrer"
-                class="block text-sm font-medium text-[#25D366] hover:underline mt-1">+91 9347419720</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gear & Camera Bag Section -->
-    <section id="gear" class="py-20 px-6 bg-brand-surface/40 border-t border-brand-border/60">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-xl mx-auto mb-14">
-          <div class="inline-flex items-center gap-2 text-brand-gold text-xs tracking-widest uppercase mb-2">
-            <i data-lucide="camera" class="w-4 h-4"></i>
-            <span>The Arsenal</span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-display font-semibold">What's In My Bag</h2>
-          <p class="text-zinc-400 text-sm mt-3">The instruments used to translate vision into tangible light and shadow.
-          </p>
-          <h2 class="text-3xl sm:text-4xl font-display font-semibold">Cinematography & Gear</h2>
-          <p class="text-zinc-400 text-sm mt-3">The instruments used by EC/10 to capture motion, shadows, and light.</p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Body 1 -->
-          <div
-            class="p-6 rounded-2xl bg-brand-card border border-brand-border/70 hover:border-brand-gold/40 transition-colors">
-            <div
-              class="w-10 h-10 rounded-xl bg-brand-surface flex items-center justify-center text-brand-gold mb-4 border border-brand-border">
-              <i data-lucide="camera" class="w-5 h-5"></i>
-              <i data-lucide="video" class="w-5 h-5"></i>
-            </div>
-            <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">Primary Camera</span>
-            <h4 class="text-base font-semibold text-white mt-1">Sony Alpha A7R V</h4>
-            <p class="text-xs text-zinc-400 mt-2">61MP full-frame sensor with AI autofocus and 8-stop image
-              stabilization.</p>
-            <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">Cinema Rig</span>
-            <h4 class="text-base font-semibold text-white mt-1">Sony FX3 / A7R V</h4>
-            <p class="text-xs text-zinc-400 mt-2">Full-frame 4K 120fps 10-bit 4:2:2 cinema recording with S-Cinetone
-              dynamic color science.</p>
-          </div>
-
-          <!-- Body 2 -->
-          <div
-            class="p-6 rounded-2xl bg-brand-card border border-brand-border/70 hover:border-brand-gold/40 transition-colors">
-            <div
-              class="w-10 h-10 rounded-xl bg-brand-surface flex items-center justify-center text-brand-gold mb-4 border border-brand-border">
-              <i data-lucide="aperture" class="w-5 h-5"></i>
-            </div>
-            <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">Street & Rangefinder</span>
-            <h4 class="text-base font-semibold text-white mt-1">Leica Q3 / M11-P</h4>
-            <p class="text-xs text-zinc-400 mt-2">For unobtrusive street sessions, raw mechanical feel, and distinctive
-              micro-contrast.</p>
-            <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">Rangefinder & 35mm</span>
-            <h4 class="text-base font-semibold text-white mt-1">Leica Q3 & M-System</h4>
-            <p class="text-xs text-zinc-400 mt-2">For raw, intimate street documentary work with unmistakable Leica
-              micro-contrast and grain.</p>
-          </div>
-
-          <!-- Lenses -->
-          <div
-            class="p-6 rounded-2xl bg-brand-card border border-brand-border/70 hover:border-brand-gold/40 transition-colors">
-            <div
-              class="w-10 h-10 rounded-xl bg-brand-surface flex items-center justify-center text-brand-gold mb-4 border border-brand-border">
-              <i data-lucide="disc" class="w-5 h-5"></i>
-            </div>
-            <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">Prime Glass</span>
-            <h4 class="text-base font-semibold text-white mt-1">35mm & 50mm f/1.2 GM</h4>
-            <p class="text-xs text-zinc-400 mt-2">Buttery bokeh and tack-sharp wide-open performance in dim evening
-              ambient light.</p>
-            <p class="text-xs text-zinc-400 mt-2">Dreamy cinematic depth of field and tack-sharp focus under candle and
-              street ambient light.</p>
-          </div>
-
-          <!-- Drone & Misc -->
-          <div
-            class="p-6 rounded-2xl bg-brand-card border border-brand-border/70 hover:border-brand-gold/40 transition-colors">
-            <div
-              class="w-10 h-10 rounded-xl bg-brand-surface flex items-center justify-center text-brand-gold mb-4 border border-brand-border">
-              <i data-lucide="compass" class="w-5 h-5"></i>
-            </div>
-            <span class="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">Aerial & Support</span>
-            <h4 class="text-base font-semibold text-white mt-1">DJI Mavic 3 Pro • Peak Design</h4>
-            <p class="text-xs text-zinc-400 mt-2">Hasselblad 4/3 CMOS sensor for aerial perspectives and carbon-fiber
-              tripods.</p>
-            <h4 class="text-base font-semibold text-white mt-1">DJI Mavic 3 Pro • Ronin RS3</h4>
-            <p class="text-xs text-zinc-400 mt-2">Hasselblad 4/3 CMOS aerial sensor and pro 3-axis stabilization for
-              seamless tracking shots.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Booking Section -->
-    <!-- Social Media & Instagram Community Section -->
-    <section id="social"
-      class="py-24 px-6 bg-brand-surface/60 border-t border-brand-border/60 relative overflow-hidden">
-      <!-- Ambient Rose Glow -->
-      <div class="absolute -top-24 right-1/4 w-80 h-80 bg-rose-500/10 rounded-full blur-[130px] pointer-events-none">
-      </div>
-
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
-          <div>
-            <div
-              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-card border border-brand-border text-brand-gold text-xs tracking-widest uppercase mb-3">
-              <svg class="w-3.5 h-3.5 fill-current text-rose-400" viewBox="0 0 24 24">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-              <span>Instagram Community • @epiccaptures10</span>
-            </div>
-            <h2 class="text-3xl sm:text-5xl font-display font-semibold tracking-tight">The Visual Journey</h2>
-            <p class="text-zinc-400 mt-3 text-sm md:text-base max-w-xl">
-              Raw behind-the-scenes cinematography, unreleased teaser reels, color grading breakdowns, and daily moments
-              framed on location.
-            </p>
-          </div>
-
-          <!-- Follow Button (Prominent) -->
-          <div>
-            <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white font-semibold text-xs uppercase tracking-widest hover:opacity-95 transition-all shadow-xl shadow-rose-900/25 hover:scale-105 active:scale-95 group">
-              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-              <span>FOLLOW MY JOURNEY</span>
-              <i data-lucide="arrow-up-right"
-                class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- 4-Card Editorial Instagram Grid Showcase -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- IG Card 1 -->
-          <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
-            class="group relative rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-500 shadow-xl">
-            <div class="aspect-[4/5] overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
-                alt="EC/10 Instagram Reel"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-              <!-- Overlay Info -->
-              <div
-                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
-                <i data-lucide="play" class="w-3.5 h-3.5 fill-white ml-0.5"></i>
-              </div>
-              <div class="absolute bottom-5 left-5 right-5 text-left">
-                <span class="text-[10px] uppercase font-mono tracking-widest text-brand-gold block">Reel
-                  Highlight</span>
-                <p
-                  class="text-sm font-display font-medium text-white mt-1 group-hover:text-brand-gold transition-colors">
-                  Light, Shadow & Cinematic Stills</p>
-                <div class="flex items-center gap-2 mt-2 text-[11px] text-zinc-400 font-mono">
-                  <span>@epiccaptures10</span>
-                  <span>•</span>
-                  <span>View on Instagram &rarr;</span>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <!-- IG Card 2 -->
-          <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
-            class="group relative rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-500 shadow-xl">
-            <div class="aspect-[4/5] overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=800&q=80"
-                alt="EC/10 Behind the scenes"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-              <!-- Overlay Info -->
-              <div
-                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </div>
-              <div class="absolute bottom-5 left-5 right-5 text-left">
-                <span class="text-[10px] uppercase font-mono tracking-widest text-brand-gold block">BTS Breakdown</span>
-                <p
-                  class="text-sm font-display font-medium text-white mt-1 group-hover:text-brand-gold transition-colors">
-                  Directing Night Sequences</p>
-                <div class="flex items-center gap-2 mt-2 text-[11px] text-zinc-400 font-mono">
-                  <span>@epiccaptures10</span>
-                  <span>•</span>
-                  <span>View on Instagram &rarr;</span>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <!-- IG Card 3 -->
-          <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
-            class="group relative rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-500 shadow-xl">
-            <div class="aspect-[4/5] overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-                alt="EC/10 Color Grading"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-              <!-- Overlay Info -->
-              <div
-                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
-                <i data-lucide="camera" class="w-3.5 h-3.5"></i>
-              </div>
-              <div class="absolute bottom-5 left-5 right-5 text-left">
-                <span class="text-[10px] uppercase font-mono tracking-widest text-brand-gold block">Film Still</span>
-                <p
-                  class="text-sm font-display font-medium text-white mt-1 group-hover:text-brand-gold transition-colors">
-                  Highland Silence • Spiti Valley</p>
-                <div class="flex items-center gap-2 mt-2 text-[11px] text-zinc-400 font-mono">
-                  <span>@epiccaptures10</span>
-                  <span>•</span>
-                  <span>View on Instagram &rarr;</span>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <!-- IG Card 4 -->
-          <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
-            class="group relative rounded-2xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-gold/60 transition-all duration-500 shadow-xl">
-            <div class="aspect-[4/5] overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=800&q=80"
-                alt="EC/10 Monochrome Story"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-              <!-- Overlay Info -->
-              <div
-                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-              </div>
-              <div class="absolute bottom-5 left-5 right-5 text-left">
-                <span class="text-[10px] uppercase font-mono tracking-widest text-brand-gold block">Editorial
-                  Milestone</span>
-                <p
-                  class="text-sm font-display font-medium text-white mt-1 group-hover:text-brand-gold transition-colors">
-                  Shadows of the Thar Desert</p>
-                <div class="flex items-center gap-2 mt-2 text-[11px] text-zinc-400 font-mono">
-                  <span>@epiccaptures10</span>
-                  <span>•</span>
-                  <span>View on Instagram &rarr;</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Booking Section with WhatsApp & Instagram Integrations -->
-    <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
-      <div
-        class="grid lg:grid-cols-12 gap-12 bg-gradient-to-b from-brand-surface to-brand-card rounded-3xl border border-brand-border p-8 md:p-14 shadow-2xl relative overflow-hidden">
-        <!-- Glow accent -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-[100px] pointer-events-none">
-        </div>
-
-        <div class="lg:col-span-5 space-y-6">
-          <div class="inline-flex items-center gap-2 text-brand-gold text-xs tracking-widest uppercase">
-            <span class="w-8 h-[1px] bg-brand-gold"></span>
-            <span>Let's Create</span>
-            <span>Let's Create Together</span>
-          </div>
-          <h2 class="text-3xl sm:text-5xl font-display font-semibold tracking-tight">Have a project or story in mind?
-          </h2>
-          <h2 class="text-3xl sm:text-5xl font-display font-semibold tracking-tight">Have a story or film in mind?</h2>
-          <p class="text-zinc-400 text-sm md:text-base leading-relaxed">
-            Currently taking bookings for editorial assignments, portrait sessions, commercial brand campaigns, and
-            limited fine-art prints.
-            EC/10 is currently taking commissions for narrative films, fashion campaigns, commercial documentaries, and
-            private visual sessions worldwide.
-          </p>
-
-          <div class="pt-6 space-y-4 text-sm">
-            <div class="flex items-center gap-4 text-zinc-300">
-              <div
-                class="w-10 h-10 rounded-full bg-brand-surface border border-brand-border flex items-center justify-center text-brand-gold">
-                <i data-lucide="mail" class="w-4 h-4"></i>
-                <!-- Prominent WhatsApp Direct Chat Action Button -->
-                <div class="pt-2">
-                  <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I'm%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let's%20connect!"
-                    target="_blank" rel="noopener noreferrer"
-                    class="w-full py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-black font-bold uppercase tracking-wider text-xs sm:text-sm flex items-center justify-center gap-3 transition-all duration-300 shadow-xl shadow-[#25D366]/20 hover:shadow-[#25D366]/35 active:scale-[0.99] group">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                      <path
-                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                    </svg>
-                    <span>LET'S TALK ON WHATSAPP</span>
-                    <i data-lucide="arrow-up-right"
-                      class="w-4 h-4 text-black/70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-                  </a>
-                  <span class="text-[11px] text-zinc-500 block text-center mt-2 font-mono">Direct chat • Quickest
-                    turnaround</span>
-                </div>
-
-                <!-- Direct Contact Methods -->
-                <div class="pt-4 space-y-4 text-sm">
-                  <!-- WhatsApp Item -->
-                  <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I'm%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let's%20connect!"
-                    target="_blank" rel="noopener noreferrer"
-                    class="flex items-center gap-4 text-zinc-300 hover:text-white transition-colors group p-3 rounded-2xl bg-brand-surface/70 border border-brand-border/70 hover:border-[#25D366]/50">
-                    <div
-                      class="w-10 h-10 rounded-full bg-[#25D366]/15 border border-[#25D366]/30 flex items-center justify-center text-[#25D366] group-hover:scale-105 transition-transform">
-                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                        <path
-                          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span class="text-xs text-zinc-500 block uppercase tracking-wider">Email Inquiry</span>
-                      <a href="mailto:hello@santhukodakandala.com"
-                        class="hover:text-brand-gold transition-colors font-medium">hello@santhukodakandala.com</a>
-                      <span class="text-xs text-zinc-500 block uppercase tracking-wider">WhatsApp Number</span>
-                      <span class="font-medium text-white group-hover:text-[#25D366] transition-colors">+91
-                        9347419720</span>
-                    </div>
-                </div>
-                </a>
-
-                <div class="flex items-center gap-4 text-zinc-300">
-                  <div
-                    class="w-10 h-10 rounded-full bg-brand-surface border border-brand-border flex items-center justify-center text-brand-gold">
-                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                    <!-- Instagram Item -->
-                    <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
-                      class="flex items-center gap-4 text-zinc-300 hover:text-white transition-colors group p-3 rounded-2xl bg-brand-surface/70 border border-brand-border/70 hover:border-rose-500/50">
-                      <div
-                        class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-500/20 via-rose-500/20 to-purple-500/20 border border-rose-500/30 flex items-center justify-center text-rose-400 group-hover:scale-105 transition-transform">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                          <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <span class="text-xs text-zinc-500 block uppercase tracking-wider">Locations</span>
-                        <span class="font-medium">Hyderabad • Bangalore • Available Worldwide</span>
-                        <span class="text-xs text-zinc-500 block uppercase tracking-wider">Instagram Handle</span>
-                        <span
-                          class="font-medium text-white group-hover:text-rose-400 transition-colors">@epiccaptures10</span>
-                      </div>
-                  </div>
-                  </a>
-
-                  <div class="flex items-center gap-4 text-zinc-300">
-                    <!-- Email Item -->
-                    <div
-                      class="flex items-center gap-4 text-zinc-300 p-3 rounded-2xl bg-brand-surface/70 border border-brand-border/70">
-                      <div
-                        class="w-10 h-10 rounded-full bg-brand-surface border border-brand-border flex items-center justify-center text-brand-gold">
-                        <i data-lucide="instagram" class="w-4 h-4"></i>
-                        <i data-lucide="mail" class="w-4 h-4"></i>
-                      </div>
-                      <div>
-                        <span class="text-xs text-zinc-500 block uppercase tracking-wider">Social Feed</span>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                          class="hover:text-brand-gold transition-colors font-medium">@santhu.visuals</a>
-                        <span class="text-xs text-zinc-500 block uppercase tracking-wider">Official Inquiries</span>
-                        <a href="mailto:hello@epiccaptures10.com"
-                          class="hover:text-brand-gold transition-colors font-medium">hello@epiccaptures10.com</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Booking / Message Form -->
-                <div class="lg:col-span-7">
-                  <form id="booking-form" class="space-y-4">
-                    <div class="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2 font-medium">Your Name
-                          *</label>
-                        <input type="text" required placeholder="e.g. Maya Chen"
-                          class="w-full px-4 py-3 rounded-xl bg-brand-black/70 border border-brand-border text-white text-sm focus:outline-none focus:border-brand-gold transition-colors placeholder:text-zinc-600">
-                      </div>
-                      <div>
-                        <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2 font-medium">Email
-                          Address *</label>
-                        <input type="email" required placeholder="maya@example.com"
-                          class="w-full px-4 py-3 rounded-xl bg-brand-black/70 border border-brand-border text-white text-sm focus:outline-none focus:border-brand-gold transition-colors placeholder:text-zinc-600">
-                      </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2 font-medium">Project /
-                          Shoot Type</label>
-                        <select
-                          class="w-full px-4 py-3 rounded-xl bg-brand-black/70 border border-brand-border text-white text-sm focus:outline-none focus:border-brand-gold transition-colors">
-                          <option value="cinematic-film">Narrative Film / Music Visual</option>
-                          <option value="commercial">Commercial / Brand Campaign</option>
-                          <option value="portrait">Editorial Portrait Session</option>
-                          <option value="commercial">Commercial / Brand Campaign</option>
-                          <option value="documentary">Travel & Documentary Assignment</option>
-                          <option value="prints">Fine-Art Print Purchase</option>
-                          <option value="other">Other Collaboration</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2 font-medium">Desired
-                          Timeline</label>
-                        <input type="text" placeholder="e.g. Next month / Summer 2026"
-                          class="w-full px-4 py-3 rounded-xl bg-brand-black/70 border border-brand-border text-white text-sm focus:outline-none focus:border-brand-gold transition-colors placeholder:text-zinc-600">
-                      </div>
-                    </div>
-
-                    <div>
-                      <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2 font-medium">Tell me about
-                        your concept *</label>
-                      <textarea rows="4" required
-                        placeholder="Share the location, mood, reference ideas, or scope of the project..."
-                        placeholder="Share the vision, location, mood references, or scope of your project..."
-                        class="w-full px-4 py-3 rounded-xl bg-brand-black/70 border border-brand-border text-white text-sm focus:outline-none focus:border-brand-gold transition-colors placeholder:text-zinc-600 resize-none"></textarea>
-                    </div>
-
-                    <button type="submit"
-                      class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-gold text-black font-semibold uppercase tracking-widest text-xs hover:bg-brand-goldHover transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-gold/15">
-                      <span>Send Inquiry</span>
-                      <i data-lucide="send" class="w-4 h-4"></i>
-                    </button>
-                    <div class="flex flex-wrap items-center gap-4 pt-2">
-                      <button type="submit"
-                        class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-gold text-black font-semibold uppercase tracking-widest text-xs hover:bg-brand-goldHover transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-gold/15">
-                        <span>Send Project Inquiry</span>
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                      </button>
-
-                      <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I'm%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let's%20connect!"
-                        target="_blank" rel="noopener noreferrer"
-                        class="w-full sm:w-auto px-6 py-3.5 rounded-full border border-zinc-700 hover:border-[#25D366] text-zinc-300 hover:text-[#25D366] font-semibold uppercase tracking-widest text-xs flex items-center justify-center gap-2 transition-all">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                          <path
-                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                        </svg>
-                        <span>Or WhatsApp Me Directly</span>
-                      </a>
-                    </div>
-
-                    <div id="form-feedback" class="hidden text-sm text-emerald-400 pt-2 flex items-center gap-2">
-                      <i data-lucide="check-circle" class="w-4 h-4"></i>
-                      <span>Thank you! Your message has been received. I will respond within 24 hours.</span>
-                    </div>
-                  </form>
-                </div>
-              </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-brand-border py-12 px-6 text-xs text-zinc-500">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-3">
-          <span class="font-display font-semibold text-zinc-300 tracking-wider">SANTHU VISUALS</span>
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="font-display font-semibold text-zinc-200 tracking-wider">EC/10 – EPIC CAPTURES 10</span>
-            <span>•</span>
-            <span>All Rights Reserved &copy; <span id="current-year"></span></span>
-            <span class="font-serif italic text-brand-gold">Life happens once. I frame what stays.</span>
-            <span>•</span>
-            <span>&copy; <span id="current-year"></span> All Rights Reserved</span>
-          </div>
-
-          <div class="flex items-center gap-6">
-            <!-- Social & Direct Channels -->
-            <div class="flex flex-wrap items-center gap-6">
-              <a href="#home" class="hover:text-brand-gold transition-colors">Back to Top</a>
-              <a href="https://instagram.com" class="hover:text-brand-gold transition-colors">Instagram</a>
-              <a href="https://unsplash.com" class="hover:text-brand-gold transition-colors">Unsplash</a>
-              <a href="https://500px.com" class="hover:text-brand-gold transition-colors">500px</a>
-
-              <!-- Instagram Link with Icon -->
-              <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
-                class="flex items-center gap-1.5 hover:text-white transition-colors text-zinc-300 group">
-                <svg class="w-3.5 h-3.5 fill-current text-rose-400 group-hover:scale-110 transition-transform"
-                  viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-                <span class="font-mono">@epiccaptures10</span>
-              </a>
-
-              <!-- WhatsApp Link with Icon -->
-              <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I'm%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let's%20connect!"
-                target="_blank" rel="noopener noreferrer"
-                class="flex items-center gap-1.5 hover:text-[#25D366] transition-colors text-zinc-300 group">
-                <svg class="w-3.5 h-3.5 fill-[#25D366] group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
-                <span class="font-mono">+91 9347419720</span>
-              </a>
-            </div>
-          </div>
-    </footer>
-
-    <!-- Floating WhatsApp Direct Chat Widget -->
-    <aside aria-label="WhatsApp quick chat" class="fixed bottom-6 right-6 z-40">
-      <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I'm%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let's%20connect!"
-        target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 select-none focus:outline-none"
-        aria-label="Chat with EC/10 on WhatsApp">
-        <!-- Tooltip Label -->
-        <span
-          class="hidden md:inline-block px-3.5 py-1.5 rounded-full bg-brand-surface/95 backdrop-blur-md border border-brand-border text-xs font-medium text-zinc-200 shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          Chat with EC/10
-        </span>
-        <!-- Pulsing WhatsApp Icon Circle -->
-        <div
-          class="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-2xl shadow-[#25D366]/40 transition-transform duration-300 group-hover:scale-110 active:scale-95 whatsapp-pulse">
-          <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24">
-            <path
-              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-          </svg>
+        <div class="leading-tight">
+          <span class="font-display text-sm font-semibold tracking-[0.22em] uppercase text-white group-hover:text-ec-gold transition-colors block">EC/10</span>
+          <span class="font-sans text-[9px] tracking-[0.25em] uppercase text-ec-muted block">Epic Captures 10</span>
         </div>
       </a>
-    </aside>
 
-    <!-- Lightbox Modal Component -->
-    <div id="lightbox"
-      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
-      <!-- Close Button -->
-      <button id="lightbox-close"
-        class="absolute top-6 right-6 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-        aria-label="Close Lightbox">
-        <i data-lucide="x" class="w-6 h-6"></i>
-      </button>
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-7 text-[11px] font-medium tracking-[0.18em] uppercase text-zinc-300">
+        <a href="#portfolio" class="hover:text-ec-gold transition-colors">Films & Stills</a>
+        <a href="#stories"   class="hover:text-ec-gold transition-colors">Narratives</a>
+        <a href="#about"     class="hover:text-ec-gold transition-colors">Creator</a>
+        <a href="#gear"      class="hover:text-ec-gold transition-colors">Arsenal</a>
+        <a href="#social"    class="hover:text-ec-gold transition-colors flex items-center gap-1.5">
+          <span>Journal</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+        </a>
+        <a href="#contact"   class="hover:text-ec-gold transition-colors">Contact</a>
+      </nav>
 
-      <!-- Prev Button -->
-      <button id="lightbox-prev"
-        class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-50 p-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-105 active:scale-95"
-        aria-label="Previous Image">
-        <i data-lucide="chevron-left" class="w-7 h-7"></i>
-      </button>
+      <!-- Right: Instagram badge + WhatsApp CTA + Hamburger -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Instagram pill (desktop) -->
+        <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
+           class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-ec-border bg-ec-surface text-zinc-300 hover:border-zinc-500 hover:text-white transition-all text-[11px] group">
+          <svg class="w-3 h-3 fill-rose-400 group-hover:scale-110 transition-transform shrink-0" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span class="font-mono">@epiccaptures10</span>
+        </a>
 
-      <!-- Next Button -->
-      <button id="lightbox-next"
-        class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-50 p-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-105 active:scale-95"
-        aria-label="Next Image">
-        <i data-lucide="chevron-right" class="w-7 h-7"></i>
-      </button>
+        <!-- WhatsApp CTA -->
+        <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I%27m%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let%27s%20connect!"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-[#25D366] hover:bg-[#1db954] text-black text-[11px] font-bold uppercase tracking-wider transition-all shadow-lg shadow-[#25D366]/20 hover:scale-105 active:scale-95">
+          <svg class="w-3.5 h-3.5 fill-black shrink-0" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span class="hidden sm:inline">WhatsApp</span>
+        </a>
 
-      <!-- Main Lightbox Content Area -->
-      <div
-        class="relative w-full h-full max-w-6xl max-h-[90vh] mx-auto p-4 sm:p-10 flex flex-col justify-between items-center select-none">
-        <!-- Lightbox Header / Counter -->
-        <div class="w-full flex items-center justify-between text-xs text-zinc-400 py-2">
-          <div class="flex items-center gap-3">
-            <span id="lb-category"
-              class="uppercase tracking-widest text-brand-gold font-mono px-2 py-0.5 rounded bg-brand-surface border border-brand-border">PORTRAITS</span>
-            <span id="lb-counter" class="font-mono">01 / 15</span>
-            <span id="lb-counter" class="font-mono">01 / 12</span>
+        <!-- Hamburger -->
+        <button id="hamburger" class="lg:hidden p-2 text-zinc-400 hover:text-white" aria-label="Toggle menu" aria-expanded="false">
+          <i data-lucide="menu" class="w-5 h-5 pointer-events-none"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden lg:hidden border-t border-ec-border bg-ec-surface px-5 pb-6 pt-4">
+      <nav class="flex flex-col gap-1 text-[11px] font-medium tracking-[0.18em] uppercase text-zinc-300 mb-5">
+        <a href="#portfolio" class="mobile-link py-2.5 border-b border-ec-border/50 hover:text-ec-gold transition-colors">Films & Stills</a>
+        <a href="#stories"   class="mobile-link py-2.5 border-b border-ec-border/50 hover:text-ec-gold transition-colors">Narratives</a>
+        <a href="#about"     class="mobile-link py-2.5 border-b border-ec-border/50 hover:text-ec-gold transition-colors">Creator</a>
+        <a href="#gear"      class="mobile-link py-2.5 border-b border-ec-border/50 hover:text-ec-gold transition-colors">Arsenal</a>
+        <a href="#social"    class="mobile-link py-2.5 border-b border-ec-border/50 hover:text-ec-gold transition-colors">Journal</a>
+        <a href="#contact"   class="mobile-link py-2.5 hover:text-ec-gold transition-colors">Contact</a>
+      </nav>
+      <div class="flex flex-col gap-2.5">
+        <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I%27m%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let%27s%20connect!"
+           target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-2 py-3 rounded-xl bg-[#25D366] text-black font-bold text-xs uppercase tracking-wider">
+          <svg class="w-4 h-4 fill-black" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp Direct Chat
+        </a>
+        <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-2 py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider instagram-gradient-bg">
+          Follow @epiccaptures10
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════ -->
+  <section id="home" class="min-h-screen flex flex-col justify-between pt-[72px]">
+    <!-- Meta strip -->
+    <div class="max-w-7xl mx-auto w-full px-5 sm:px-8">
+      <div class="flex flex-wrap items-center justify-between gap-3 py-4 border-b border-ec-border/50 text-[10px] uppercase tracking-[0.22em] text-ec-muted">
+        <span class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          Available for worldwide commissions
+        </span>
+        <span class="font-mono">2.39:1 Anamorphic · 35mm RAW</span>
+      </div>
+    </div>
+
+    <!-- Main hero content -->
+    <div class="flex-1 max-w-7xl mx-auto w-full px-5 sm:px-8 py-14 sm:py-20 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <!-- Text block -->
+      <div class="lg:col-span-7 space-y-6">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-ec-border bg-ec-surface text-ec-gold text-[10px] uppercase tracking-widest">
+          <i data-lucide="clapperboard" class="w-3.5 h-3.5"></i>
+          Independent Filmmaker & Visual Creator
+        </span>
+
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-semibold leading-[1.08] tracking-tight">
+          Life happens once.<br>
+          <em class="font-serif font-normal not-italic text-ec-gold">I frame what stays.</em>
+        </h1>
+
+        <p class="text-zinc-400 max-w-lg text-base md:text-lg font-light leading-relaxed">
+          EC/10 translates fleeting human presence, raw emotion, and atmospheric light into timeless cinematic visual stories.
+        </p>
+
+        <!-- CTA row -->
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a href="#portfolio"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold text-[11px] uppercase tracking-widest hover:bg-ec-gold transition-all duration-300 shadow-xl group">
+            Explore Projects
+            <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"></i>
+          </a>
+          <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I%27m%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let%27s%20connect!"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#25D366]/40 bg-[#25D366]/10 text-[#25D366] font-semibold text-[11px] uppercase tracking-widest hover:border-[#25D366] hover:bg-[#25D366]/20 transition-all">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp Chat
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="lg:col-span-5 relative group">
+        <div class="relative overflow-hidden rounded-2xl border border-ec-border shadow-2xl bg-ec-surface aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
+               alt="EC/10 featured frame"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               loading="eager">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end text-xs">
+            <div>
+              <p class="font-display text-ec-gold text-sm tracking-wide">Amber Horizons · Reel 01</p>
+              <p class="text-zinc-400 text-[10px] font-mono mt-0.5">Sony FX3 · 50mm f/1.2 GM</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur border border-white/10 text-[9px] uppercase tracking-widest text-zinc-300">EC/10 Cut</span>
           </div>
-          <button id="toggle-exif-btn"
-            class="flex items-center gap-1.5 hover:text-white transition-colors px-3 py-1 rounded-full bg-white/5 border border-white/10">
-            <i data-lucide="info" class="w-3.5 h-3.5"></i>
-            <span class="text-[11px] uppercase tracking-wider">EXIF Details</span>
-          </button>
+        </div>
+        <div class="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border border-ec-gold/20 -z-10 group-hover:border-ec-gold/40 transition-colors pointer-events-none"></div>
+      </div>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="max-w-7xl mx-auto w-full px-5 sm:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-t border-ec-border/50">
+        <div>
+          <div class="font-display text-2xl font-bold text-white">EC/10</div>
+          <div class="text-[10px] uppercase tracking-widest text-ec-muted mt-1">Epic Captures 10</div>
+        </div>
+        <div>
+          <div class="font-display text-2xl font-bold text-white">40+</div>
+          <div class="text-[10px] uppercase tracking-widest text-ec-muted mt-1">Film & Photo Commissions</div>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer" class="group block">
+            <div class="font-mono text-sm font-bold text-white group-hover:text-rose-400 transition-colors">@epiccaptures10</div>
+            <div class="text-[10px] uppercase tracking-widest text-ec-muted mt-1">Instagram · Follow Us</div>
+          </a>
+        </div>
+        <div>
+          <div class="font-display text-2xl font-bold text-white">100%</div>
+          <div class="text-[10px] uppercase tracking-widest text-ec-muted mt-1">Independent Vision</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PORTFOLIO GALLERY
+  ════════════════════════════════════════════════ -->
+  <section id="portfolio" class="py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+      <!-- Section header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="flex items-center gap-2 text-ec-gold text-[10px] tracking-widest uppercase mb-2">
+            <span class="w-7 h-px bg-ec-gold"></span>Curated Works
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight">Selected Films & Galleries</h2>
         </div>
 
-        <!-- Center Image with Loader -->
-        <div class="relative flex-1 flex items-center justify-center w-full my-auto overflow-hidden">
-          <div id="lb-spinner" class="absolute inset-0 flex items-center justify-center">
-            <div class="w-10 h-10 border-2 border-brand-gold/20 border-t-brand-gold rounded-full animate-spin"></div>
+        <!-- Filter pills -->
+        <div id="filter-bar" class="flex flex-wrap gap-2">
+          <button class="filter-pill active" data-cat="all">All</button>
+          <button class="filter-pill" data-cat="portraits">Portraits</button>
+          <button class="filter-pill" data-cat="street">Street</button>
+          <button class="filter-pill" data-cat="landscape">Landscape</button>
+          <button class="filter-pill" data-cat="architecture">Architecture</button>
+          <button class="filter-pill" data-cat="monochrome">Monochrome</button>
+        </div>
+      </div>
+
+      <!-- Masonry grid (auto-rows with JS span) -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[260px]">
+        <!-- Cards injected by app.js -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       STORIES / ESSAYS
+  ════════════════════════════════════════════════ -->
+  <section id="stories" class="py-24 bg-ec-surface/50 border-y border-ec-border/60">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl mb-14">
+        <div class="flex items-center gap-2 text-ec-gold text-[10px] tracking-widest uppercase mb-2">
+          <span class="w-7 h-px bg-ec-gold"></span>Documentary Narratives
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight">Visual Stories & Essays</h2>
+        <p class="text-zinc-400 mt-3 text-sm leading-relaxed">Multi-frame essays that go deep into places, cultures, and emotional landscapes.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7">
+        <!-- Story card -->
+        <article class="group rounded-2xl overflow-hidden bg-ec-card border border-ec-border hover:border-ec-gold/50 transition-all duration-500">
+          <div class="aspect-video overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80"
+                 alt="Monsoon in Varanasi" loading="lazy"
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           </div>
-          <img id="lb-image" src="" alt="Enlarged view"
-            class="max-h-[75vh] max-w-full object-contain rounded-lg shadow-2xl transition-all duration-300 opacity-0">
+          <div class="p-6">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-ec-gold">Photo Essay · 12 Frames</span>
+            <h3 class="font-display text-lg font-semibold mt-2 group-hover:text-ec-gold transition-colors">Monsoon in Varanasi</h3>
+            <p class="text-zinc-400 text-xs mt-2 leading-relaxed line-clamp-3">Echoes along the sacred ghats as the first monsoon showers blend ancient stone, rising mist, and quiet prayers.</p>
+            <div class="mt-5 pt-4 border-t border-ec-border/60 flex items-center justify-between text-xs text-zinc-400">
+              <span class="font-mono text-zinc-500">Aug 2025</span>
+              <span class="flex items-center gap-1 group-hover:text-ec-gold transition-colors">Read Essay <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="group rounded-2xl overflow-hidden bg-ec-card border border-ec-border hover:border-ec-gold/50 transition-all duration-500">
+          <div class="aspect-video overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80"
+                 alt="Midnight in Shinjuku" loading="lazy"
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-ec-gold">Street Narrative · 18 Frames</span>
+            <h3 class="font-display text-lg font-semibold mt-2 group-hover:text-ec-gold transition-colors">Midnight in Shinjuku</h3>
+            <p class="text-zinc-400 text-xs mt-2 leading-relaxed line-clamp-3">Navigating the neon labyrinth of alleys, wet tarmac reflections, and lone commuters in the beating heart of Tokyo.</p>
+            <div class="mt-5 pt-4 border-t border-ec-border/60 flex items-center justify-between text-xs text-zinc-400">
+              <span class="font-mono text-zinc-500">Oct 2025</span>
+              <span class="flex items-center gap-1 group-hover:text-ec-gold transition-colors">Read Essay <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="group rounded-2xl overflow-hidden bg-ec-card border border-ec-border hover:border-ec-gold/50 transition-all duration-500">
+          <div class="aspect-video overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                 alt="Highland Whispers" loading="lazy"
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-ec-gold">Expedition Doc · 15 Frames</span>
+            <h3 class="font-display text-lg font-semibold mt-2 group-hover:text-ec-gold transition-colors">Highland Whispers: Spiti</h3>
+            <p class="text-zinc-400 text-xs mt-2 leading-relaxed line-clamp-3">Arid high-altitude silence, ancient monasteries perched over cliffs, and starlit skies at sub-zero temperatures.</p>
+            <div class="mt-5 pt-4 border-t border-ec-border/60 flex items-center justify-between text-xs text-zinc-400">
+              <span class="font-mono text-zinc-500">Jan 2026</span>
+              <span class="flex items-center gap-1 group-hover:text-ec-gold transition-colors">Read Essay <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       ABOUT / CREATOR
+  ════════════════════════════════════════════════ -->
+  <section id="about" class="py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-14 items-center">
+
+        <!-- Creator photo -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative overflow-hidden rounded-2xl border border-ec-border shadow-2xl bg-ec-surface">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                 alt="EC/10 Creator" loading="lazy"
+                 class="w-full aspect-[4/5] object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <div class="inline-flex items-center gap-2 mb-1.5">
+                <span class="px-2 py-0.5 rounded bg-ec-gold/20 border border-ec-gold/30 text-ec-gold text-[9px] font-mono font-bold tracking-widest uppercase">EC/10</span>
+              </div>
+              <div class="font-display text-lg font-semibold">Independent Visual Creator</div>
+              <div class="text-ec-gold text-[10px] tracking-widest uppercase mt-0.5">Filmmaker & Photographer</div>
+            </div>
+          </div>
+          <!-- Corner accents -->
+          <div class="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-ec-gold/50 pointer-events-none rounded-tl-sm"></div>
         </div>
 
-        <!-- Bottom Caption & EXIF Drawer -->
-        <div class="w-full text-center space-y-2 pt-2">
-          <h3 id="lb-title" class="text-lg sm:text-xl font-display font-medium text-white tracking-wide">Photo Title
-          </h3>
-          <p id="lb-location" class="text-xs text-zinc-400 font-light">Location Tag</p>
-
-          <!-- EXIF Drawer (Collapsible) -->
-          <div id="lb-exif-panel"
-            class="pt-3 border-t border-white/10 max-w-2xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono text-zinc-300">
-            <div class="bg-brand-surface/80 p-2.5 rounded-lg border border-white/5">
-              <span class="text-[10px] text-zinc-500 block uppercase">Camera</span>
-              <span id="exif-camera" class="font-semibold text-white">Sony A7R V</span>
-              <span id="exif-camera" class="font-semibold text-white">Sony FX3 / A7R V</span>
+        <!-- Bio text -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex items-center gap-2 text-ec-gold text-[10px] tracking-widest uppercase">
+            <span class="w-7 h-px bg-ec-gold"></span>Creative Philosophy
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold leading-tight">
+            "Life happens once.<br>I frame what stays."
+          </h2>
+          <div class="space-y-4 text-zinc-300 text-sm leading-relaxed font-light">
+            <p>EC/10 (Epic Captures 10) was born from a desire to break away from sterile, cookie-cutter productions. Filmmaking and photography for me are intimate, sensory crafts — capturing the weight of silence between two words, the cadence of natural light across a face, and the honest texture of human memory.</p>
+            <p>Operating independently allows me to stay agile and deeply personal with every project. Whether it's a narrative short, an evocative fashion editorial, or an authentic human documentary, every frame is cut with intention.</p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-5 pt-4 border-t border-ec-border/60 text-sm">
+            <div>
+              <span class="text-[10px] uppercase tracking-widest text-zinc-500 block">Specializations</span>
+              <span class="text-zinc-200 font-medium mt-1 block">Cinema · Portraits · Street</span>
             </div>
-            <div class="bg-brand-surface/80 p-2.5 rounded-lg border border-white/5">
-              <span class="text-[10px] text-zinc-500 block uppercase">Lens</span>
-              <span id="exif-lens" class="font-semibold text-white">50mm f/1.2 GM</span>
+            <div>
+              <span class="text-[10px] uppercase tracking-widest text-zinc-500 block">Instagram</span>
+              <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
+                 class="text-ec-gold font-medium mt-1 block hover:underline">@epiccaptures10</a>
             </div>
-            <div class="bg-brand-surface/80 p-2.5 rounded-lg border border-white/5">
-              <span class="text-[10px] text-zinc-500 block uppercase">Settings</span>
-              <span id="exif-settings" class="font-semibold text-white">1/500s • f/1.4</span>
-            </div>
-            <div class="bg-brand-surface/80 p-2.5 rounded-lg border border-white/5">
-              <span class="text-[10px] text-zinc-500 block uppercase">ISO</span>
-              <span id="exif-iso" class="font-semibold text-white">ISO 100</span>
+            <div>
+              <span class="text-[10px] uppercase tracking-widest text-zinc-500 block">Direct Chat</span>
+              <a href="https://wa.me/919347419720" target="_blank" rel="noopener noreferrer"
+                 class="text-[#25D366] font-medium mt-1 block hover:underline">+91 93474 19720</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Scripts -->
-    <script src="app.js"></script>
-    <script>
-      // Initialize Lucide icons
-      lucide.createIcons();
-      document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+
+  <!-- ═══════════════════════════════════════════════
+       GEAR / ARSENAL
+  ════════════════════════════════════════════════ -->
+  <section id="gear" class="py-24 bg-ec-surface/50 border-t border-ec-border/60">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 text-ec-gold text-[10px] tracking-widest uppercase mb-2">
+          <i data-lucide="camera" class="w-4 h-4"></i>The Arsenal
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold">Cinematography & Gear</h2>
+        <p class="text-zinc-400 text-sm mt-2">Instruments EC/10 uses to capture motion, shadow, and light.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="p-6 rounded-2xl bg-ec-card border border-ec-border hover:border-ec-gold/40 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-ec-surface border border-ec-border flex items-center justify-center text-ec-gold mb-4"><i data-lucide="video" class="w-4 h-4"></i></div>
+          <span class="text-[9px] uppercase tracking-widest text-zinc-500 font-mono">Cinema Rig</span>
+          <h4 class="font-semibold text-white mt-1">Sony FX3 / A7R V</h4>
+          <p class="text-xs text-zinc-400 mt-2">Full-frame 4K 120fps 10-bit 4:2:2 with S-Cinetone color science.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-ec-card border border-ec-border hover:border-ec-gold/40 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-ec-surface border border-ec-border flex items-center justify-center text-ec-gold mb-4"><i data-lucide="aperture" class="w-4 h-4"></i></div>
+          <span class="text-[9px] uppercase tracking-widest text-zinc-500 font-mono">Rangefinder</span>
+          <h4 class="font-semibold text-white mt-1">Leica Q3 & M-System</h4>
+          <p class="text-xs text-zinc-400 mt-2">Raw intimate street documentary work with unmistakable Leica micro-contrast.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-ec-card border border-ec-border hover:border-ec-gold/40 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-ec-surface border border-ec-border flex items-center justify-center text-ec-gold mb-4"><i data-lucide="disc" class="w-4 h-4"></i></div>
+          <span class="text-[9px] uppercase tracking-widest text-zinc-500 font-mono">Prime Glass</span>
+          <h4 class="font-semibold text-white mt-1">35mm & 50mm f/1.2 GM</h4>
+          <p class="text-xs text-zinc-400 mt-2">Cinematic depth of field under candle and street ambient light.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-ec-card border border-ec-border hover:border-ec-gold/40 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-ec-surface border border-ec-border flex items-center justify-center text-ec-gold mb-4"><i data-lucide="compass" class="w-4 h-4"></i></div>
+          <span class="text-[9px] uppercase tracking-widest text-zinc-500 font-mono">Aerial & Support</span>
+          <h4 class="font-semibold text-white mt-1">DJI Mavic 3 Pro · Ronin RS3</h4>
+          <p class="text-xs text-zinc-400 mt-2">Hasselblad 4/3 CMOS aerial sensor and 3-axis stabilisation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       INSTAGRAM JOURNAL / SOCIAL
+  ════════════════════════════════════════════════ -->
+  <section id="social" class="py-24 relative overflow-hidden">
+    <div class="pointer-events-none absolute -top-20 right-1/3 w-80 h-80 rounded-full bg-rose-600/8 blur-[120px]" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+      <!-- Section header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-ec-border bg-ec-card text-ec-gold text-[10px] uppercase tracking-widest mb-3">
+            <svg class="w-3.5 h-3.5 fill-rose-400" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram Community · @epiccaptures10
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight">The Visual Journey</h2>
+          <p class="text-zinc-400 mt-2 text-sm max-w-xl leading-relaxed">BTS cinematography, unreleased reels, color grading breakdowns and daily moments framed on location.</p>
+        </div>
+
+        <!-- Prominent Follow Button -->
+        <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-[11px] uppercase tracking-widest hover:opacity-90 transition-all shadow-xl hover:scale-105 active:scale-95 instagram-gradient-bg shrink-0">
+          <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Follow My Journey
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- 4-card Instagram grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- IG Card helper: each links to Instagram profile -->
+        <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
+           class="ig-card group relative rounded-2xl overflow-hidden border border-ec-border hover:border-ec-gold/50 transition-all duration-500 shadow-xl bg-ec-card">
+          <div class="aspect-[4/5] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
+                 alt="EC/10 Reel Highlight" loading="lazy"
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+          <div class="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/60 backdrop-blur border border-white/20 flex items-center justify-center">
+            <i data-lucide="play" class="w-3 h-3 fill-white text-white ml-0.5"></i>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[9px] font-mono uppercase tracking-widest text-ec-gold">Reel Highlight</span>
+            <p class="text-xs font-display font-medium text-white mt-0.5 group-hover:text-ec-gold transition-colors">Light, Shadow & Cinematic Stills</p>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
+           class="ig-card group relative rounded-2xl overflow-hidden border border-ec-border hover:border-ec-gold/50 transition-all duration-500 shadow-xl bg-ec-card">
+          <div class="aspect-[4/5] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=600&q=80"
+                 alt="EC/10 BTS Breakdown" loading="lazy"
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+          <div class="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/60 backdrop-blur border border-white/20 flex items-center justify-center">
+            <svg class="w-3 h-3 fill-white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[9px] font-mono uppercase tracking-widest text-ec-gold">BTS Breakdown</span>
+            <p class="text-xs font-display font-medium text-white mt-0.5 group-hover:text-ec-gold transition-colors">Directing Night Sequences</p>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
+           class="ig-card group relative rounded-2xl overflow-hidden border border-ec-border hover:border-ec-gold/50 transition-all duration-500 shadow-xl bg-ec-card">
+          <div class="aspect-[4/5] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                 alt="EC/10 Film Still" loading="lazy"
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+          <div class="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/60 backdrop-blur border border-white/20 flex items-center justify-center">
+            <i data-lucide="camera" class="w-3 h-3 text-white"></i>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[9px] font-mono uppercase tracking-widest text-ec-gold">Film Still</span>
+            <p class="text-xs font-display font-medium text-white mt-0.5 group-hover:text-ec-gold transition-colors">Highland Silence · Spiti Valley</p>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
+           class="ig-card group relative rounded-2xl overflow-hidden border border-ec-border hover:border-ec-gold/50 transition-all duration-500 shadow-xl bg-ec-card">
+          <div class="aspect-[4/5] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=600&q=80"
+                 alt="EC/10 Editorial Milestone" loading="lazy"
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+          <div class="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/60 backdrop-blur border border-white/20 flex items-center justify-center">
+            <i data-lucide="sparkles" class="w-3 h-3 text-white"></i>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[9px] font-mono uppercase tracking-widest text-ec-gold">Editorial Milestone</span>
+            <p class="text-xs font-display font-medium text-white mt-0.5 group-hover:text-ec-gold transition-colors">Shadows of the Thar Desert</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════════ -->
+  <section id="contact" class="py-24 bg-ec-surface/50 border-t border-ec-border/60">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="rounded-3xl border border-ec-border bg-gradient-to-b from-ec-surface to-ec-card p-8 md:p-14 shadow-2xl relative overflow-hidden">
+        <div class="pointer-events-none absolute top-0 right-0 w-96 h-96 rounded-full bg-ec-gold/8 blur-[120px]" aria-hidden="true"></div>
+
+        <div class="grid lg:grid-cols-12 gap-12 relative">
+
+          <!-- Left: Intro + WhatsApp CTA + contact items -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="flex items-center gap-2 text-ec-gold text-[10px] tracking-widest uppercase">
+              <span class="w-7 h-px bg-ec-gold"></span>Let's Create Together
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight">Have a story or film in mind?</h2>
+            <p class="text-zinc-400 text-sm leading-relaxed">EC/10 is taking commissions for narrative films, fashion campaigns, commercial documentaries, and private visual sessions worldwide.</p>
+
+            <!-- PRIMARY WhatsApp CTA -->
+            <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I%27m%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let%27s%20connect!"
+               target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#1db954] text-black font-bold uppercase tracking-wider text-sm transition-all shadow-xl shadow-[#25D366]/20 hover:shadow-[#25D366]/35 active:scale-[0.98] group">
+              <svg class="w-5 h-5 fill-black" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              LET'S TALK ON WHATSAPP
+              <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+            </a>
+            <p class="text-[11px] text-center text-zinc-500 font-mono -mt-2">Direct chat · Quickest response</p>
+
+            <!-- Contact rows -->
+            <div class="space-y-3 pt-2">
+              <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I%27m%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let%27s%20connect!"
+                 target="_blank" rel="noopener noreferrer"
+                 class="contact-row group border-[#25D366]/20 hover:border-[#25D366]/50">
+                <div class="contact-icon bg-[#25D366]/15 border-[#25D366]/30 text-[#25D366]">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                </div>
+                <div>
+                  <span class="text-[9px] uppercase tracking-widest text-zinc-500 block">WhatsApp</span>
+                  <span class="text-sm font-medium text-white group-hover:text-[#25D366] transition-colors">+91 93474 19720</span>
+                </div>
+              </a>
+
+              <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
+                 class="contact-row group border-rose-500/20 hover:border-rose-500/50">
+                <div class="contact-icon bg-gradient-to-tr from-amber-500/20 via-rose-500/20 to-purple-500/20 border-rose-500/30 text-rose-400">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </div>
+                <div>
+                  <span class="text-[9px] uppercase tracking-widest text-zinc-500 block">Instagram</span>
+                  <span class="text-sm font-medium text-white group-hover:text-rose-400 transition-colors">@epiccaptures10</span>
+                </div>
+              </a>
+
+              <div class="contact-row">
+                <div class="contact-icon bg-ec-surface border-ec-border text-ec-gold">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <span class="text-[9px] uppercase tracking-widest text-zinc-500 block">Email</span>
+                  <a href="mailto:hello@epiccaptures10.com" class="text-sm font-medium text-white hover:text-ec-gold transition-colors">hello@epiccaptures10.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: booking form -->
+          <div class="lg:col-span-7">
+            <form id="booking-form" class="space-y-4" novalidate>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="form-label">Your Name *</label>
+                  <input type="text" required placeholder="e.g. Arjun Sharma" class="form-input">
+                </div>
+                <div>
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" required placeholder="arjun@example.com" class="form-input">
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="form-label">Project Type</label>
+                  <select class="form-input">
+                    <option>Narrative Film / Music Visual</option>
+                    <option>Commercial / Brand Campaign</option>
+                    <option>Editorial Portrait Session</option>
+                    <option>Travel & Documentary</option>
+                    <option>Other Collaboration</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label">Timeline</label>
+                  <input type="text" placeholder="e.g. Next month / Summer 2026" class="form-input">
+                </div>
+              </div>
+              <div>
+                <label class="form-label">Your Concept *</label>
+                <textarea required rows="4" placeholder="Share the vision, location, mood references, or scope of your project..." class="form-input resize-none"></textarea>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3 pt-1">
+                <button type="submit"
+                        class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-ec-gold text-black font-semibold uppercase tracking-widest text-xs hover:bg-ec-gold2 transition-all shadow-lg shadow-ec-gold/15 active:scale-95">
+                  Send Inquiry <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+                <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I%27m%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let%27s%20connect!"
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-zinc-700 hover:border-[#25D366] text-zinc-300 hover:text-[#25D366] font-semibold uppercase tracking-widest text-xs transition-all">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                  WhatsApp Me Directly
+                </a>
+              </div>
+
+              <div id="form-success" class="hidden text-sm text-emerald-400 flex items-center gap-2 pt-1">
+                <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                Thank you! Message received. I'll respond within 24 hours.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+  <footer class="border-t border-ec-border py-10 px-5 sm:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5 text-xs text-zinc-500">
+      <div class="flex flex-wrap items-center gap-2 text-center md:text-left">
+        <span class="font-display font-semibold text-zinc-200 tracking-wider">EC/10 — EPIC CAPTURES 10</span>
+        <span>·</span>
+        <em class="font-serif text-ec-gold not-italic">Life happens once. I frame what stays.</em>
+        <span>·</span>
+        <span>&copy; <span id="footer-year"></span></span>
+      </div>
+      <div class="flex flex-wrap items-center gap-5">
+        <a href="#home" class="hover:text-ec-gold transition-colors">Top</a>
+        <a href="https://www.instagram.com/epiccaptures10/" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-1.5 hover:text-white transition-colors group">
+          <svg class="w-3 h-3 fill-rose-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @epiccaptures10
+        </a>
+        <a href="https://wa.me/919347419720" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-1.5 hover:text-[#25D366] transition-colors group">
+          <svg class="w-3 h-3 fill-[#25D366] group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          +91 93474 19720
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FLOATING WHATSAPP BUTTON
+  ════════════════════════════════════════════════ -->
+  <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3 group">
+    <span class="hidden md:block px-3 py-1.5 rounded-full bg-ec-surface/95 backdrop-blur border border-ec-border text-xs text-zinc-200 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+      Chat with EC/10
+    </span>
+    <a href="https://wa.me/919347419720?text=Hey!%20I%20discovered%20your%20EC%2F10%20portfolio%20and%20really%20loved%20your%20work.%20I%27m%20interested%20in%20discussing%20a%20photography%2Fvideography%20project.%20Let%27s%20connect!"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Chat with EC/10 on WhatsApp"
+       class="wa-float-btn w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1db954] flex items-center justify-center shadow-2xl shadow-[#25D366]/40 transition-transform duration-300 hover:scale-110 active:scale-95">
+      <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       LIGHTBOX
+  ════════════════════════════════════════════════ -->
+  <div id="lightbox" class="fixed inset-0 z-[60] bg-black/96 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-label="Image lightbox">
+    <button id="lb-close" class="absolute top-5 right-5 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Close">
+      <i data-lucide="x" class="w-5 h-5"></i>
+    </button>
+    <button id="lb-prev" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-105" aria-label="Previous">
+      <i data-lucide="chevron-left" class="w-6 h-6"></i>
+    </button>
+    <button id="lb-next" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all hover:scale-105" aria-label="Next">
+      <i data-lucide="chevron-right" class="w-6 h-6"></i>
+    </button>
+
+    <div class="h-full max-w-5xl mx-auto px-4 sm:px-16 flex flex-col justify-between py-6">
+      <!-- Counter + EXIF toggle -->
+      <div class="flex items-center justify-between text-xs text-zinc-400">
+        <div class="flex items-center gap-3">
+          <span id="lb-cat" class="font-mono uppercase tracking-widest text-ec-gold px-2 py-0.5 rounded bg-ec-surface border border-ec-border">—</span>
+          <span id="lb-count" class="font-mono">01 / 12</span>
+        </div>
+        <button id="lb-exif-toggle" class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 hover:text-white transition-colors text-[11px] uppercase tracking-wider">
+          <i data-lucide="info" class="w-3.5 h-3.5"></i>EXIF
+        </button>
+      </div>
+
+      <!-- Image -->
+      <div class="flex-1 flex items-center justify-center relative my-4">
+        <div id="lb-spinner" class="absolute inset-0 flex items-center justify-center">
+          <div class="w-8 h-8 border-2 border-ec-gold/20 border-t-ec-gold rounded-full animate-spin"></div>
+        </div>
+        <img id="lb-img" src="" alt="" class="max-h-[70vh] max-w-full object-contain rounded-xl shadow-2xl opacity-0 transition-opacity duration-300">
+      </div>
+
+      <!-- Caption + EXIF drawer -->
+      <div class="text-center space-y-2">
+        <h3 id="lb-title" class="font-display text-lg font-medium text-white tracking-wide">—</h3>
+        <p id="lb-loc" class="text-xs text-zinc-400">—</p>
+        <div id="lb-exif" class="pt-3 border-t border-white/10 max-w-xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
+          <div class="bg-ec-surface/80 p-2.5 rounded-lg border border-white/5">
+            <span class="text-[9px] text-zinc-500 uppercase block">Camera</span>
+            <span id="ex-cam" class="font-semibold text-white text-xs">—</span>
+          </div>
+          <div class="bg-ec-surface/80 p-2.5 rounded-lg border border-white/5">
+            <span class="text-[9px] text-zinc-500 uppercase block">Lens</span>
+            <span id="ex-lens" class="font-semibold text-white text-xs">—</span>
+          </div>
+          <div class="bg-ec-surface/80 p-2.5 rounded-lg border border-white/5">
+            <span class="text-[9px] text-zinc-500 uppercase block">Settings</span>
+            <span id="ex-set" class="font-semibold text-white text-xs">—</span>
+          </div>
+          <div class="bg-ec-surface/80 p-2.5 rounded-lg border border-white/5">
+            <span class="text-[9px] text-zinc-500 uppercase block">ISO</span>
+            <span id="ex-iso" class="font-semibold text-white text-xs">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+  <script>
+    lucide.createIcons();
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
