@@ -11,6 +11,7 @@
 | Type           | Personal Portfolio Website (Static HTML)    |
 | Creator        | Independent Filmmaker & Visual Creator      |
 | Tagline        | Life happens once. I frame what stays.      |
+| Design Language| Google Design (design.google) Editorial     |
 | Instagram      | @epiccaptures10                             |
 | WhatsApp       | +91 9347419720                              |
 | Stack          | HTML5 · Tailwind CSS CDN · Vanilla JS       |
@@ -240,6 +241,29 @@ All 13 structural checks passed:
 - Brand name + tagline + copyright year (auto)
 - Instagram icon + handle link
 - WhatsApp icon + number link
+
+---
+
+### PHASE 8 — Google Design (design.google) Transformation & Gear Removal
+
+**Redesign Direction:**
+- Transformed overall visual aesthetic into Google Design's iconic clean, airy, modern editorial architecture (`design.google`).
+- Typography: Plus Jakarta Sans / Google Sans inspired geometric sans with Playfair Display editorial accents.
+- Distinctive Google Design features added:
+  - Sticky clean navigation with four-color Google dot badge (`blue #1a73e8`, `red #ea4335`, `yellow #fbbc04`, `green #34a853`).
+  - Dark / Light mode toggle with persistent local storage state (defaults to Google Design signature clean light theme).
+  - Editorial hero with featured magazine story card, rounded-3xl framing, and metric strip.
+  - Curated Works section with Google Design pill chips / filter buttons.
+  - Visual Stories & Essays section modeled after Google Design articles (Monsoon in Varanasi, Midnight in Shinjuku, Highland Whispers: Spiti).
+  - High-res Lightbox modal with EXIF metadata toggle.
+  - Dedicated Instagram Journal grid (@epiccaptures10) and prominent CTAs.
+  - Commission contact form with clean Google Material styling and dual WhatsApp CTAs.
+  - Floating WhatsApp action button with pulse animation.
+
+**Gear Removal & Clean Placeholders:**
+- Completely removed the equipment gear section (`#gear`, Cinematography & Gear: Sony FX3, Leica, Prime glass, DJI drone).
+- Removed all nav and drawer links pointing to `#gear` ("Arsenal").
+- Replaced all external stock photos with clean, neutral blank placeholders across Hero, Curated Works gallery, Documentary Narratives, Creator Profile, and Instagram Journal so the user can easily plug in their friend's actual media.
 
 ---
 
